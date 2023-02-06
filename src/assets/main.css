@@ -1,0 +1,35 @@
+@import "./base.css";
+
+#app {
+  margin: 0 auto;
+  padding: 4vw;
+  min-height: 200vh;
+  background-color: var(--color-background);
+  font-weight: normal;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+  transform: scale(1);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: var(--color-hover);
+    transform: scale(0.95);
+  }
+}
+
+@media (min-width: 1024px) {
+  #app {
+    max-width: 80vw;
+    padding: 2rem 4rem;
+  }
+}
