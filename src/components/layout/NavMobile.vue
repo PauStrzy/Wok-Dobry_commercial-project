@@ -24,7 +24,7 @@ export default {
   <div class="wrapper">
     <hello-world msg="Wok Dobry"></hello-world>
     <menu-bar :vis="vis" @toggle-menu="showAndHide"></menu-bar>
-    <nav class="screen" v-if="vis">
+    <nav class="screen" :class="vis ? 'active' : null">
       <ul>
         <li><RouterLink to="/">Home</RouterLink></li>
         <li><RouterLink to="/menu">Menu</RouterLink></li>
@@ -41,7 +41,7 @@ export default {
 nav.screen {
   display: none;
 }
-@media (max-width: 1400px) {
+@media (max-width: 1240px) {
   nav.screen {
     display: block;
     position: fixed;
@@ -49,9 +49,12 @@ nav.screen {
     height: 100%;
     background-color: #fff;
     top: 0;
-    left: 0;
+    left: 100%;
     z-index: 100;
-    transition: all 0.6s ease-in-out;
+    transition: left 0.5s ease-out;
+  }
+  nav.screen.active {
+    left: 0;
   }
   nav.screen::after {
     display: none;
@@ -75,7 +78,7 @@ nav.screen {
     font-size: 1.5rem;
     padding: 0.75rem 1.5rem;
     width: 100%;
-    font-style: italic;
+    /* font-style: italic; */
   }
 }
 </style>

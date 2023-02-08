@@ -6,7 +6,9 @@ import { RouterLink } from "vue-router";
   <nav class="screen">
     <ul>
       <li><RouterLink to="/">Home</RouterLink></li>
-      <li><RouterLink to="/menu">Menu</RouterLink></li>
+      <li>
+        <RouterLink to="/menu"><span>Menu</span></RouterLink>
+      </li>
       <li><a href="#">O nas</a></li>
       <li><a href="#">Dowozy</a></li>
       <li><a href="#">Galeria</a></li>
@@ -20,7 +22,7 @@ nav.screen {
   display: none;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1240px) {
   nav.screen {
     display: block;
     width: 100%;
@@ -34,7 +36,7 @@ nav.screen {
     content: "";
     display: block;
     width: 100%;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 2px solid var(--color-border);
   }
 
   ul {
@@ -54,7 +56,15 @@ nav.screen {
     padding: 0.75rem 1.5rem;
     width: 100%;
     height: 100%;
-    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-text);
+    transform: scale(1);
+    transition: color 0.3s linear, transform 0.3s linear;
+  }
+  ul li a:hover {
+    color: var(--color-hover);
+    transform: scale(1.1);
   }
 }
 </style>

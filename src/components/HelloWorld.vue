@@ -8,29 +8,50 @@ defineProps({
 </script>
 
 <template>
-  <div class="greetings">
+  <div class="brand-name">
     <h1>{{ msg }}</h1>
   </div>
 </template>
 
 <style scoped>
-h1 {
+.brand-name h1 {
   font-weight: 500;
   font-size: 2.6rem;
   text-transform: uppercase;
   top: -10px;
-  -webkit-text-stroke: 2px #db1616;
-  -webkit-text-fill-color: #db161667;
-  color: transparent;
-}
-
-.greetings h1 {
   text-align: center;
+  animation: flicker 6s infinite alternate;
+  color: transparent;
+  -webkit-text-stroke: 2px #f81313d5;
+  -webkit-text-fill-color: #f16666a9;
+}
+@keyframes flicker {
+  0%,
+  18%,
+  21%,
+  26%,
+  30%,
+  53%,
+  56%,
+  100% {
+    text-shadow: 0 0 4px #fae1e1, 0 0 11px #fcdede, 0 0 19px #f88484,
+      0 0 30px #f33737, 0 0 50px #f82a2a, 0 0 70px #f52b2b;
+    -webkit-text-stroke: 2px #f81313d5;
+    -webkit-text-fill-color: #f16666a9;
+  }
+  23%,
+  25%,
+  27% {
+    -webkit-text-stroke: 2px #f81313d5;
+    -webkit-text-fill-color: #e44141d5;
+    text-shadow: none;
+  }
 }
 
-@media (min-width: 1024px) {
-  .greetings h1 {
+@media (min-width: 1240px) {
+  .brand-name h1 {
     text-align: left;
+    font-size: 4rem;
   }
 }
 </style>

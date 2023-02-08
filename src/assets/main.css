@@ -19,7 +19,6 @@ a {
   transition: all 0.3s;
   cursor: pointer;
 }
-
 @media (hover: hover) {
   a:hover {
     color: var(--color-hover);
@@ -27,7 +26,19 @@ a {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1000px) {
+  #app {
+    max-width: 80vw;
+    padding: 2rem 4rem;
+  }
+}
+@media (min-width: 1240px) {
+  #app {
+    max-width: 100vw;
+    padding: 2rem 4rem;
+  }
+}
+@media (min-width: 1800px) {
   #app {
     max-width: 80vw;
     padding: 2rem 4rem;

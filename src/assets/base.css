@@ -54,7 +54,7 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: #fff;
+  background: #2e2e2e;
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: Roboto, sans-serif;
@@ -62,4 +62,10 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+  -webkit-text-stroke: 1.9px #db1616;
+  -webkit-text-fill-color: #e39292;
+  color: transparent;
 }
