@@ -13,11 +13,13 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper">
-    <hello-world msg="Wok Dobry"></hello-world>
-    <nav-desktop></nav-desktop>
-    <nav-mobile></nav-mobile>
-  </div>
+  <section class="header">
+    <div class="wrapper">
+      <hello-world msg="Wok Dobry"></hello-world>
+      <nav-desktop></nav-desktop>
+      <nav-mobile></nav-mobile>
+    </div>
+  </section>
 </template>
 
 <style scoped>

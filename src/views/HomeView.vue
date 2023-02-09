@@ -1,25 +1,48 @@
-<script setup>
-const loading = false;
+<script>
+import { RouterLink } from "vue-router";
+import TheMenu from "./TheMenu.vue";
+
+export default {
+  components: {
+    TheMenu,
+  },
+  data() {
+    return {
+      loading: false,
+    };
+  },
+};
 </script>
 
 <template>
-  <div class="wrapper">
-    <div class="logo">
-      <img src="../../img/logo_1.png" alt="logo Wok Dobry" />
-    </div>
+  <section class="home">
+    <div class="wrapper">
+      <div class="logo">
+        <img src="../../img/logo_1.png" alt="logo Wok Dobry" />
+      </div>
 
-    <div class="gallery">
-      <div v-if="loading">
-        <base-spinner></base-spinner>
+      <div class="gallery">
+        <div v-if="loading">
+          <base-spinner></base-spinner>
+        </div>
+        <div v-if="!loading" class="img2">
+          <img src="../../img/inside_3.png" alt="picture of Wok Dobry" />
+        </div>
       </div>
-      <div v-if="!loading" class="img2">
-        <img src="../../img/inside_3.png" alt="picture of Wok Dobry" />
+
+      <div class="slogan">
+        <h2>Odkryj smaki azjatyckiej kuchni</h2>
       </div>
     </div>
-    <div class="slogan">
-      <h2>Odkryj smaki azjatyckiej kuchni</h2>
-    </div>
+  </section>
+  <div class="break">
+    <img src="../../img/leaves12.png" alt="leafs background" />
+    <img src="../../img/leaves13.png" alt="leafs background" />
+    <img src="../../img/leaves12.png" alt="leafs background" />
   </div>
+  <section class="menu">
+    <RouterLink to="/menu"><the-menu></the-menu></RouterLink>
+  </section>
 </template>
 
 <style scoped>
@@ -28,7 +51,6 @@ const loading = false;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 1rem;
 }
 .logo {
   position: relative;
@@ -39,7 +61,7 @@ const loading = false;
 .logo img {
   width: 100%;
   border-radius: 50%;
-  z-index: 10;
+  z-index: 20;
 }
 
 .gallery {
@@ -52,6 +74,7 @@ const loading = false;
   height: 20rem;
   box-shadow: 0.2em 0.2em 0.8em rgb(255, 21, 21),
     -0.2em -0.2em 0.8em rgb(0, 183, 255);
+  z-index: 10;
 }
 
 .gallery img {
@@ -73,20 +96,30 @@ h2 {
   text-transform: uppercase;
 }
 
+.break {
+  margin: 1rem 0;
+  width: 100%;
+  overflow: hidden;
+}
+.break img {
+  object-fit: cover;
+  width: 33%;
+  height: 33%;
+}
+
 @media (min-width: 1240px) {
   .wrapper {
     display: grid;
     max-height: 100vh;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: repeat(7, 1fr);
   }
   .logo {
     position: static;
     top: 0;
     width: 15rem;
     height: 15rem;
-    /* border: 1px solid red; */
-    grid-column: 2/4;
+    grid-column: 3/5;
     grid-row: 1/3;
   }
   .gallery {
@@ -94,7 +127,7 @@ h2 {
     top: 0;
     width: 25rem;
     height: 35rem;
-    grid-column: 4/7;
+    grid-column: 5/7;
     grid-row: 2/8;
   }
 
@@ -111,10 +144,16 @@ h2 {
     text-transform: uppercase;
     word-spacing: 1rem;
   }
+  section.home {
+    padding-bottom: 0;
+  }
 }
-@media (min-width: 2000px) {
+@media (min-width: 1800px) {
   .slogan {
     grid-column: 6/10;
+  }
+  section.home {
+    padding-bottom: 0;
   }
 }
 </style>

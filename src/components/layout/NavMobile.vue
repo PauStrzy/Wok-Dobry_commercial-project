@@ -1,5 +1,5 @@
 <script>
-import { RouterLink } from "vue-router";
+
 import MenuBar from "../ui/MenuBar.vue";
 
 export default {
@@ -21,20 +21,21 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper">
-    <hello-world msg="Wok Dobry"></hello-world>
-    <menu-bar :vis="vis" @toggle-menu="showAndHide"></menu-bar>
-    <nav class="screen" :class="vis ? 'active' : null">
-      <ul>
-        <li><RouterLink to="/">Home</RouterLink></li>
-        <li><RouterLink to="/menu">Menu</RouterLink></li>
-        <li><a href="#">O nas</a></li>
-        <li><a href="#">Dowozy</a></li>
-        <li><a href="#">Galeria</a></li>
-        <li><a href="#">Kontakt</a></li>
-      </ul>
-    </nav>
-  </div>
+  <section class="nav-mobile">
+    <div class="wrapper">
+      <hello-world msg="Wok Dobry"></hello-world>
+      <menu-bar :vis="vis" @toggle-menu="showAndHide"></menu-bar>
+      <nav class="screen" :class="vis ? 'active' : null">
+        <ul>
+          <li><router-link to="/">O nas</router-link></li>
+          <li><router-link to="/menu">Menu</router-link></li>
+          <li><a href="#">Dowozy</a></li>
+          <li><a href="#">Galeria</a></li>
+          <li><a href="#">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
 </template>
 
 <style scoped>

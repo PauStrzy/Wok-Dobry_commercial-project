@@ -3,18 +3,19 @@ import { RouterLink } from "vue-router";
 </script>
 
 <template>
-  <nav class="screen">
-    <ul>
-      <li><RouterLink to="/">Home</RouterLink></li>
-      <li>
-        <RouterLink to="/menu"><span>Menu</span></RouterLink>
-      </li>
-      <li><a href="#">O nas</a></li>
-      <li><a href="#">Dowozy</a></li>
-      <li><a href="#">Galeria</a></li>
-      <li><a href="#">Kontakt</a></li>
-    </ul>
-  </nav>
+  <section class="nav-desktop">
+    <nav class="screen">
+      <ul>
+        <li><RouterLink to="/">O nas</RouterLink></li>
+        <li>
+          <RouterLink to="/menu"><span>Menu</span></RouterLink>
+        </li>
+        <li><a href="#">Dowozy</a></li>
+        <li><a href="#">Galeria</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </nav>
+  </section>
 </template>
 
 <style scoped>

@@ -1,7 +1,9 @@
 <template>
+  <section class="menu">
   <div class="menu">
     <h2 class="menu">Sprawdź aktualne <span>Menu</span></h2>
   </div>
+</section>
 </template>
 
 <style scoped>
