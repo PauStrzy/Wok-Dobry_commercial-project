@@ -9,7 +9,9 @@ defineProps({
 
 <template>
   <div class="brand-name">
-    <h1>{{ msg }}</h1>
+    <RouterLink to="/"
+      ><h1>{{ msg }}</h1></RouterLink
+    >
   </div>
 </template>
 
@@ -49,6 +51,12 @@ defineProps({
 }
 
 @media (min-width: 1240px) {
+  .brand-name h1 {
+    text-align: left;
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 1800px) {
   .brand-name h1 {
     text-align: left;
     font-size: 4rem;

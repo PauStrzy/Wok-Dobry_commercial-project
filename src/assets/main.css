@@ -11,6 +11,9 @@
 section {
   padding: 0 4vw;
 }
+section.menu {
+  text-align: center;
+}
 ul {
   list-style: none;
   padding: 0;

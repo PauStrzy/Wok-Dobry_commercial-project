@@ -29,9 +29,6 @@ nav.screen {
     width: 100%;
     background: none;
     text-align: left;
-    font-size: 1.5rem;
-    padding: 1rem 0;
-    margin: 1rem 0;
   }
   nav.screen::after {
     content: "";
@@ -53,8 +50,8 @@ nav.screen {
   ul li a {
     display: inline-block;
     text-align: center;
-    font-size: 1.5rem;
-    padding: 0.75rem 1.5rem;
+    font-size: 1.3rem;
+    padding: 0.6rem 1.2rem;
     width: 100%;
     height: 100%;
     text-transform: uppercase;
@@ -66,6 +63,36 @@ nav.screen {
   ul li a:hover {
     color: var(--color-hover);
     transform: scale(1.1);
+  }
+}
+@media (min-width: 1800px) {
+  nav.screen {
+    display: block;
+    width: 100%;
+    background: none;
+    text-align: left;
+    font-size: 1.5rem;
+    padding-top: 0rem;
+    margin-top: 0rem;
+  }
+  nav.screen::after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid var(--color-border);
+  }
+  ul li a {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-text);
+    transform: scale(1);
+    transition: color 0.3s linear, transform 0.3s linear;
   }
 }
 </style>

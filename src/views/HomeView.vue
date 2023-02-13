@@ -1,15 +1,22 @@
 <script>
 import { RouterLink } from "vue-router";
 import TheMenu from "./TheMenu.vue";
+import TheGallery from "../components/ui/TheGallery.vue";
 
 export default {
   components: {
     TheMenu,
+    TheGallery,
   },
   data() {
     return {
-      loading: false,
+      isLoading: true,
     };
+  },
+  computed: {
+    loaded() {
+      this.isLoading = false;
+    },
   },
 };
 </script>
@@ -22,16 +29,16 @@ export default {
       </div>
 
       <div class="gallery">
-        <div v-if="loading">
+        <!-- <div v-if="isLoading">
           <base-spinner></base-spinner>
-        </div>
-        <div v-if="!loading" class="img2">
-          <img src="../../img/inside_3.png" alt="picture of Wok Dobry" />
-        </div>
+        </div> -->
+        <the-gallery></the-gallery>
       </div>
 
       <div class="slogan">
-        <h2>Odkryj smaki azjatyckiej kuchni</h2>
+        <div class="shadow">
+          <h2>Odkryj smaki azjatyckiej kuchni</h2>
+        </div>
       </div>
     </div>
   </section>
@@ -54,6 +61,7 @@ export default {
 }
 .logo {
   position: relative;
+  top: 0;
   right: 25%;
   width: 8rem;
   height: 8rem;
@@ -70,29 +78,26 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15rem;
-  height: 20rem;
-  box-shadow: 0.2em 0.2em 0.8em rgb(255, 21, 21),
-    -0.2em -0.2em 0.8em rgb(0, 183, 255);
+  width: 50vw;
+  height: auto;
   z-index: 10;
-}
-
-.gallery img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .slogan {
   position: relative;
   padding: 0 1rem 0 1rem;
   top: -10vh;
+  width: 80vw;
+
   text-align: center;
-  background-color: rgba(245, 111, 111, 0.507);
+  background-color: rgba(255, 243, 243, 0.719);
   z-index: 30;
+  padding: 1rem 0;
 }
 h2 {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+  letter-spacing: 0.2rem;
   text-transform: uppercase;
 }
 
@@ -106,13 +111,67 @@ h2 {
   width: 33%;
   height: 33%;
 }
+section.menu {
+  text-align: center;
+}
 
 @media (min-width: 1240px) {
+  section {
+    padding-top: 0;
+    padding-bottom: 0;
+    min-height: 80vh;
+  }
   .wrapper {
     display: grid;
-    max-height: 100vh;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+  .logo {
+    position: static;
+    top: 0;
+    width: 11rem;
+    height: 11rem;
+    grid-column: 4/6;
+    grid-row: 1/3;
+  }
+  .gallery {
+    position: static;
+    top: 0;
+    width: 100%;
+    grid-column: 5/8;
+    grid-row: 1/7;
+  }
+
+  .slogan {
+    position: static;
+    padding: 0 0 0 1rem;
+    top: 0;
+    width: 100%;
+    text-align: left;
+    grid-column: 6/10;
+    grid-row: 4/6;
+  }
+  h2 {
+    font-size: 2rem;
+    word-spacing: 0.4rem;
+    letter-spacing: 0.1rem;
+  }
+  section.home {
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 1800px) {
+  .wrapper {
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(7, 1fr);
+  }
+  .slogan {
+    grid-column: 6/10;
+    grid-row: 5/7;
+  }
+  h2 {
+    font-size: 2.5rem;
+    word-spacing: 1rem;
   }
   .logo {
     position: static;
@@ -124,33 +183,11 @@ h2 {
   }
   .gallery {
     position: static;
+    width: 100%;
+    height: 100%;
     top: 0;
-    width: 25rem;
-    height: 35rem;
-    grid-column: 5/7;
-    grid-row: 2/8;
-  }
-
-  .slogan {
-    position: static;
-    padding: 0 0 0 1rem;
-    top: 0;
-    text-align: left;
-    grid-column: 6/11;
-    grid-row: 5/8;
-  }
-  h2 {
-    font-size: 3rem;
-    text-transform: uppercase;
-    word-spacing: 1rem;
-  }
-  section.home {
-    padding-bottom: 0;
-  }
-}
-@media (min-width: 1800px) {
-  .slogan {
-    grid-column: 6/10;
+    grid-column: 4/8;
+    grid-row: 1/8;
   }
   section.home {
     padding-bottom: 0;

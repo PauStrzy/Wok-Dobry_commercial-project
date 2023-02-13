@@ -1,5 +1,4 @@
 <script>
-
 import MenuBar from "../ui/MenuBar.vue";
 
 export default {
@@ -11,6 +10,7 @@ export default {
       vis: false,
     };
   },
+
   emits: ["toggleMenu"],
   methods: {
     showAndHide() {

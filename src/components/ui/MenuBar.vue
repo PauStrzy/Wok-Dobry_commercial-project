@@ -1,10 +1,19 @@
 <template>
   <div class="menu-wrapper" @click="$emit('toggleMenu')">
-    <div class="bars">
+    <div class="bars" v-if="!vis">
+      <span></span>
+    </div>
+    <div class="xSign" v-else>
       <span></span>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["vis"],
+};
+</script>
 
 <style scoped>
 .menu-wrapper {
@@ -26,24 +35,47 @@
 .bars:after {
   content: "";
   position: absolute;
-  /* top: calc(50% - 1px); */
   width: 100%;
-  /* border: 2px solid rgba(87, 4, 4, 0.575); */
   border: 2px solid var(--color-text);
   border-radius: 8px;
+  border-right: 10px solid #1849cf;
+}
+.bars span {
+  border: none;
 }
 
 .bars:before {
-  transform: translateY(-8px);
+  transform: translateY(-4px);
 }
 .bars:after {
-  transform: translateY(8px);
+  transform: translateY(4px);
 }
-.bars:active {
-  transform: scaleY(1.5);
+
+.xSign {
+  width: 60px;
+  height: 2px;
+  border-radius: 8px;
+  transition: transform 0.9s;
 }
-.bars:hover {
-  transform: scaleY(1.5);
+.xSign span,
+.xSign:before,
+.xSign::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border: 2px solid var(--color-text);
+  border-radius: 8px;
+  transform-origin: 70%;
+  border-right: 10px solid #1849cf;
+}
+.xSign span {
+  border: none;
+}
+.xSign:before {
+  transform: rotate(15deg) translateY(-4px);
+}
+.xSign:after {
+  transform: rotate(-15deg) translateY(4px);
 }
 
 @media (min-width: 1240px) {
