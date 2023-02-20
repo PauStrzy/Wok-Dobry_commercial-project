@@ -15,7 +15,7 @@ export default {
 <template>
   <section class="header">
     <div class="wrapper">
-      <hello-world msg="Wok Dobry"></hello-world>
+      <hello-world msg="Wok Dobry!"></hello-world>
       <nav-desktop></nav-desktop>
       <nav-mobile></nav-mobile>
     </div>
@@ -25,5 +25,15 @@ export default {
 <style scoped>
 header {
   line-height: 1.5;
+}
+.wrapper {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+@media (min-width: 1240px) {
+  .wrapper {
+    width: 100%;
+  }
 }
 </style>

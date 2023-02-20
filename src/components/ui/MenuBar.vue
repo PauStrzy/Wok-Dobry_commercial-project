@@ -18,7 +18,7 @@ export default {
 <style scoped>
 .menu-wrapper {
   position: fixed;
-  bottom: 5vh;
+  bottom: 8vh;
   left: calc(50vw - 60px / 2);
   z-index: 1000;
   cursor: pointer;

@@ -17,10 +17,12 @@ defineProps({
 
 <style scoped>
 .brand-name h1 {
+  background-color: var(--white-pale);
+  box-shadow: 0 0 5px var(--color-border);
+  border-radius: 5px;
   font-weight: 500;
   font-size: 2.6rem;
   text-transform: uppercase;
-  top: -10px;
   text-align: center;
   animation: flicker 6s infinite alternate;
   color: transparent;
@@ -38,13 +40,13 @@ defineProps({
   100% {
     text-shadow: 0 0 4px #fae1e1, 0 0 11px #fcdede, 0 0 19px #f88484,
       0 0 30px #f33737, 0 0 50px #f82a2a, 0 0 70px #f52b2b;
-    -webkit-text-stroke: 2px #f81313d5;
+    -webkit-text-stroke: 2px var(--color-border);
     -webkit-text-fill-color: #f16666a9;
   }
   23%,
   25%,
   27% {
-    -webkit-text-stroke: 2px #f81313d5;
+    -webkit-text-stroke: 2px var(--color-border);
     -webkit-text-fill-color: #e44141d5;
     text-shadow: none;
   }
@@ -52,12 +54,15 @@ defineProps({
 
 @media (min-width: 1240px) {
   .brand-name h1 {
+    background-color: transparent;
+    box-shadow: none;
     text-align: left;
     font-size: 3.5rem;
   }
 }
 @media (min-width: 1800px) {
   .brand-name h1 {
+    letter-spacing: 0.1rem;
     text-align: left;
     font-size: 4rem;
   }

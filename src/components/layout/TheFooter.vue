@@ -1,9 +1,11 @@
 <template>
-  <div class="wrapper">
-    <p>
-      <span>©</span> Wok Dobry <span>{{ currentDate }}</span>
-    </p>
-  </div>
+  <footer>
+    <div class="wrapper">
+      <p>
+        © {{ currentDate }} <span>WOK DOBRY</span> | kuchnia azjatycka - Kwidzyn
+      </p>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -19,27 +21,43 @@ export default {
 </script>
 
 <style scoped>
-.wrapper {
+footer {
   position: absolute;
+  background-color: var(--white-pale);
+  width: 100%;
   bottom: 0;
+}
+.wrapper {
   width: 100%;
   text-align: center;
-  min-height: 5vh;
-  font-weight: bold;
+  box-shadow: 0 0 2px var(--color-border);
+  height: 4vh;
 }
-.wrapper::before {
+/* .wrapper::before {
   content: "";
   display: block;
-  margin-top: 1rem;
-  border-top: 1px solid var(--color-border);
+  box-shadow: 0 0 1px 0 var(--color-border);
   width: 100%;
-}
+} */
 p {
-  /* font-weight: bold; */
-  font-weight: 500;
-  font-size: 0.8rem;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.6rem;
   text-transform: uppercase;
-  height: 100%;
-  padding: 0.2rem 0;
+}
+span {
+  font-weight: bold;
+}
+@media (min-width: 1240px) {
+  .wrapper {
+    box-shadow: 0 0 5px var(--color-border);
+    height: 5vh;
+  }
+  p {
+    font-size: 0.8rem;
+  }
 }
 </style>

@@ -7,10 +7,13 @@
       clickable: true,
     }"
     :modules="modules"
-    class="mySwiper"
+    :loop="true"
   >
     <swiper-slide
       ><img src="../../../img/inside_1.png" alt="Inside of Wok Dobry"
+    /></swiper-slide>
+    <swiper-slide
+      ><img src="../../../img/inside_2.png" alt="Inside of Wok Dobry"
     /></swiper-slide>
     <swiper-slide
       ><img src="../../../img/inside_3.png" alt="Inside of Wok Dobry"
@@ -46,6 +49,10 @@ export default {
 .swiper {
   width: 100%;
   height: 100%;
+  --swiper-navigation-size: 20px;
+  --swiper-navigation-color: var(--swiper);
+  --swiper-pagination-color: var(--swiper);
+  border-radius: 5px;
 }
 
 .swiper-slide {
@@ -57,5 +64,16 @@ export default {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+@media (min-width: 1000px) {
+  .swiper {
+    --swiper-navigation-size: 33px;
+  }
+}
+@media (min-width: 1800px) {
+  .swiper {
+    --swiper-navigation-size: 44px;
+  }
 }
 </style>

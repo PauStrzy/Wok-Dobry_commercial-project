@@ -23,15 +23,14 @@ export default {
 <template>
   <section class="nav-mobile">
     <div class="wrapper">
-      <hello-world msg="Wok Dobry"></hello-world>
       <menu-bar :vis="vis" @toggle-menu="showAndHide"></menu-bar>
       <nav class="screen" :class="vis ? 'active' : null">
-        <ul>
+        <ul @click="showAndHide">
           <li><router-link to="/">O nas</router-link></li>
-          <li><router-link to="/menu">Menu</router-link></li>
+          <li><a href="#menu">Menu</a></li>
           <li><a href="#">Dowozy</a></li>
           <li><a href="#">Galeria</a></li>
-          <li><a href="#">Kontakt</a></li>
+          <li><a href="#contact-us">Kontakt</a></li>
         </ul>
       </nav>
     </div>
@@ -44,7 +43,10 @@ nav.screen {
 }
 @media (max-width: 1240px) {
   nav.screen {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -67,7 +69,7 @@ nav.screen {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
   }
   li {
     width: 100%;

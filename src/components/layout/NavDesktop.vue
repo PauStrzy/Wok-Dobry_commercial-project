@@ -7,12 +7,10 @@ import { RouterLink } from "vue-router";
     <nav class="screen">
       <ul>
         <li><RouterLink to="/">O nas</RouterLink></li>
-        <li>
-          <RouterLink to="/menu"><span>Menu</span></RouterLink>
-        </li>
+        <li><a href="#menu">Menu</a></li>
         <li><a href="#">Dowozy</a></li>
         <li><a href="#">Galeria</a></li>
-        <li><a href="#">Kontakt</a></li>
+        <li><a href="#contact-us">Kontakt</a></li>
       </ul>
     </nav>
   </section>
@@ -26,23 +24,17 @@ nav.screen {
 @media (min-width: 1240px) {
   nav.screen {
     display: block;
-    width: 100%;
-    background: none;
-    text-align: left;
-  }
-  nav.screen::after {
-    content: "";
-    display: block;
-    width: 100%;
-    border-bottom: 2px solid var(--color-border);
   }
 
   ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
   }
   li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     width: 100%;
     height: 100%;
   }
@@ -56,43 +48,22 @@ nav.screen {
     height: 100%;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--color-text);
     transform: scale(1);
-    transition: color 0.3s linear, transform 0.3s linear;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-color: #f50b0bd5;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--text-light-2);
+    letter-spacing: 0.2rem;
+    transition: letter-spacing 0.4s;
   }
   ul li a:hover {
-    color: var(--color-hover);
-    transform: scale(1.1);
+    letter-spacing: 0.3rem;
   }
 }
 @media (min-width: 1800px) {
-  nav.screen {
-    display: block;
-    width: 100%;
-    background: none;
-    text-align: left;
-    font-size: 1.5rem;
-    padding-top: 0rem;
-    margin-top: 0rem;
-  }
-  nav.screen::after {
-    content: "";
-    display: block;
-    width: 100%;
-    border-bottom: 2px solid var(--color-border);
-  }
   ul li a {
-    display: inline-block;
-    text-align: center;
     font-size: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    width: 100%;
-    height: 100%;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--color-text);
-    transform: scale(1);
-    transition: color 0.3s linear, transform 0.3s linear;
   }
 }
 </style>

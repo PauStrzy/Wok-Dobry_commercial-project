@@ -10,6 +10,7 @@ import router from "./router";
 // import "bootstrap/dist/css/bootstrap.css";
 
 import BaseSpinner from "./components/ui/BaseSpinner.vue";
+import BaseBreak from "./components/ui/BaseBreak.vue";
 
 import "./assets/main.css";
 
@@ -21,5 +22,6 @@ app.use(router);
 // app.use(Bootstrap);
 
 app.component("base-spinner", BaseSpinner);
+app.component("base-break", BaseBreak);
 
 app.mount("#app");
