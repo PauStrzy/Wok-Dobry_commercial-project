@@ -3,7 +3,7 @@ import { RouterLink } from "vue-router";
 </script>
 
 <template>
-  <section class="nav-desktop">
+  <section class="nav-desktop" ref="nav">
     <nav class="screen">
       <ul>
         <li><RouterLink to="/">O nas</RouterLink></li>
@@ -24,6 +24,14 @@ nav.screen {
 @media (min-width: 1240px) {
   nav.screen {
     display: block;
+    /* position: fixed;
+    top: 13%;
+    left: 10%;
+    right: 10%;
+    width: 80%; */
+    background-color: var(--white-pale);
+    box-shadow: 0 0 1px var(--color-border);
+    z-index: 100000;
   }
 
   ul {
@@ -51,7 +59,7 @@ nav.screen {
     transform: scale(1);
     border-bottom: 1px solid;
     border-top: 1px solid;
-    border-color: #f50b0bd5;
+    border-color: var(--color-border);
     color: transparent;
     -webkit-text-stroke: 1.5px var(--text-light-2);
     letter-spacing: 0.2rem;

@@ -4,16 +4,19 @@ import { RouterLink } from "vue-router";
 import TheMenu from "./TheMenu.vue";
 import TheGallery from "../components/TheGallery.vue";
 import ContactUs from "../components/ContactUs.vue";
+import NewsletterModal from "../components/NewsletterModal.vue";
 
 export default {
   components: {
     TheMenu,
     TheGallery,
     ContactUs,
+    NewsletterModal,
   },
   data() {
     return {
       isLoading: true,
+      showNewsletter: true,
     };
   },
   computed: {
@@ -26,6 +29,15 @@ export default {
 
 <template>
   <div class="container">
+    <!-- <button id="show-newsletter" @click="showNewsletter = true">
+      Newsletter
+    </button> -->
+    <Teleport to="body">
+      <newsletter-modal
+        :show="showNewsletter"
+        @close="showNewsletter = false"
+      ></newsletter-modal>
+    </Teleport>
     <section id="home">
       <div class="wrapper">
         <div class="logo">
