@@ -1,14 +1,10 @@
 <script>
-import { RouterLink } from "vue-router";
-
-import TheMenu from "./TheMenu.vue";
 import TheGallery from "../components/TheGallery.vue";
 import ContactUs from "../components/ContactUs.vue";
 import NewsletterModal from "../components/NewsletterModal.vue";
 
 export default {
   components: {
-    TheMenu,
     TheGallery,
     ContactUs,
     NewsletterModal,
@@ -21,7 +17,7 @@ export default {
   },
   computed: {
     loaded() {
-      this.isLoading = false;
+      return (this.isLoading = false);
     },
   },
   mounted() {

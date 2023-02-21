@@ -13,7 +13,7 @@ export default {
     const route = useRoute();
     const router = useRouter();
 
-    watch(route, (_, _2) => {
+    watch(route, () => {
       router.push("/");
     });
   },
