@@ -10,13 +10,13 @@
     :loop="true"
   >
     <swiper-slide
-      ><img src="../../../img/inside_1.png" alt="Inside of Wok Dobry"
+      ><img src="../../img/inside_1.png" alt="Inside of Wok Dobry"
     /></swiper-slide>
     <swiper-slide
-      ><img src="../../../img/inside_2.png" alt="Inside of Wok Dobry"
+      ><img src="../../img/inside_2.png" alt="Inside of Wok Dobry"
     /></swiper-slide>
     <swiper-slide
-      ><img src="../../../img/inside_3.png" alt="Inside of Wok Dobry"
+      ><img src="../../img/inside_3.png" alt="Inside of Wok Dobry"
     /></swiper-slide>
   </swiper>
 </template>
