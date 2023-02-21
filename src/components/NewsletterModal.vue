@@ -12,6 +12,7 @@
           <input
             type="text"
             id="user-name"
+            name="user-name"
             v-model.trim="userName"
             placeholder="Twoje imię"
           />
@@ -28,9 +29,7 @@
             placeholder="Adres e-mail"
             @blur="validateInput"
           />
-          <!-- <p v-if="userEmailValidity === 'invalid'">
-            Podaj prawidłowy adres e-mail
-          </p> -->
+          <p class="invalid-slogan">Podaj prawidłowy adres e-mail</p>
         </div>
         <div class="newsletter-control">
           <label for="confirm-terms">
@@ -65,14 +64,18 @@ export default {
     return {
       userName: "",
       userEmail: "",
+      userEmailValidity: "pending",
     };
   },
   methods: {
     submitForm() {
-      this.userName = "";
-      console.log(this.userName);
-      this.userEmail = "";
-      console.log(this.userEmail);
+      if (this.userEmail === "") {
+        this.validateInput();
+      } else {
+        console.log(this.userName);
+        console.log(this.userEmail);
+        this.clearForm();
+      }
     },
     validateInput() {
       if (this.userEmail === "") {
@@ -81,7 +84,12 @@ export default {
         this.userEmailValidity = "valid";
       }
     },
+    clearForm() {
+      this.userName = "";
+      this.userEmail = "";
+    },
   },
+  mounted() {},
 };
 </script>
 
@@ -103,18 +111,19 @@ export default {
   align-items: stretch;
   width: 60rem;
   height: 35rem;
-  margin: 10rem auto;
+  margin: 2rem auto;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.616);
-  padding: 2rem 4rem;
+  padding: 1rem 1rem;
   background-color: #ffffff;
   transition: all 0.3s ease;
+  max-width: 90%;
 }
 .newsletter-control {
   margin-bottom: 0.5rem;
 }
 h2 {
-  font-size: 2rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
 p.slogan {
@@ -155,7 +164,7 @@ select:-webkit-autofill {
 }
 
 .confirm-terms-caption {
-  font-size: 0.95rem;
+  font-size: 0.7rem;
   text-align: justify;
 }
 button {
@@ -164,11 +173,17 @@ button {
   color: inherit;
   font-weight: bold;
   border-radius: 8px;
-  font-size: 1.3rem;
-  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
   background-color: #f5e6e6;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+.newsletter-control p.invalid-slogan {
+  opacity: 0;
+}
+.invalid p.invalid-slogan {
+  opacity: 1;
 }
 
 button:hover,
@@ -178,7 +193,7 @@ button:active {
 }
 .newsletter-btn-close {
   align-self: end;
-  padding: 0.25rem 1rem;
+  padding: 0.1rem 0.5rem;
 }
 
 .newsletter-btn-sign-up {
@@ -200,5 +215,31 @@ button:active {
 .newsletter-leave-to form {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+@media (min-width: 1240px) {
+  .newsletter-form {
+    margin: 5vh auto;
+    padding: 2rem 4rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  button {
+    font-size: 1.3rem;
+    padding: 0.75rem 1.5rem;
+  }
+  .newsletter-btn-close {
+    padding: 0.25rem 1rem;
+  }
+  .confirm-terms-caption {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 1800px) {
+  .newsletter-form {
+    margin: 20vh auto;
+  }
 }
 </style>

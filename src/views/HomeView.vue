@@ -16,13 +16,16 @@ export default {
   data() {
     return {
       isLoading: true,
-      showNewsletter: true,
+      showNewsletter: false,
     };
   },
   computed: {
     loaded() {
       this.isLoading = false;
     },
+  },
+  mounted() {
+    this.showNewsletter = true;
   },
 };
 </script>
@@ -137,26 +140,52 @@ h2 {
   padding-bottom: 5vh;
 }
 
+@media (min-width: 420px) {
+  section {
+    padding-top: 10vh;
+    padding-bottom: 0;
+    min-height: 80vh;
+  }
+  #home {
+    display: block;
+    height: 70%;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .gallery {
+    width: 45%;
+  }
+}
+
 @media (min-width: 1240px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50%;
+  }
   section {
     padding-top: 0;
     padding-bottom: 0;
     min-height: 80vh;
   }
   #home {
-    display: block;
     height: 100%;
-    width: 90%;
-    margin: 0 auto;
   }
 
   .logo {
-    left: -25vh;
-    width: 11rem;
-    height: 11rem;
+    left: -20vh;
+    top: 1vh;
+    width: 8rem;
+    height: 8rem;
   }
   .gallery {
+    top: -15vh;
     width: 25%;
+  }
+  .slogan {
+    top: -7.5vh;
   }
 
   h2 {
@@ -183,8 +212,18 @@ h2 {
     word-spacing: 0.5rem;
   }
   .logo {
-    width: 15rem;
-    height: 15rem;
+    top: 2vh;
+    left: -20vh;
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .gallery {
+    top: -8vh;
+    width: 30%;
+  }
+  .slogan {
+    top: -4vh;
   }
 }
 </style>

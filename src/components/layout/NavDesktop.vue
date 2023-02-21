@@ -30,7 +30,7 @@ nav.screen {
     right: 10%;
     width: 80%; */
     background-color: var(--white-pale);
-    box-shadow: 0 0 1px var(--color-border);
+    box-shadow: 0 0 4px var(--color-border);
     z-index: 100000;
   }
 
@@ -50,8 +50,8 @@ nav.screen {
   ul li a {
     display: inline-block;
     text-align: center;
-    font-size: 1.3rem;
-    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
+    padding: 0.4rem 0;
     width: 100%;
     height: 100%;
     text-transform: uppercase;
@@ -72,6 +72,7 @@ nav.screen {
 @media (min-width: 1800px) {
   ul li a {
     font-size: 1.5rem;
+    padding: 0.5rem 0;
   }
 }
 </style>
