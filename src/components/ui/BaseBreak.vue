@@ -1,8 +1,8 @@
 <template>
   <div class="break">
-    <img src="../../../img/leaves12.png" alt="leafs background" />
-    <img src="../../../img/leaves13.png" alt="leafs background" />
-    <img src="../../../img/leaves12.png" alt="leafs background" />
+    <img src="../../img/leaves12.png" alt="leafs background" />
+    <img src="../../img/leaves13.png" alt="leafs background" />
+    <img src="../../img/leaves12.png" alt="leafs background" />
   </div>
 </template>
 

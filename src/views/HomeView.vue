@@ -145,6 +145,7 @@ h2 {
     padding-top: 10vh;
     padding-bottom: 0;
     min-height: 80vh;
+    margin: 1rem 0;
   }
   #home {
     display: block;
@@ -181,11 +182,11 @@ h2 {
     height: 8rem;
   }
   .gallery {
-    top: -15vh;
+    top: -8vh;
     width: 25%;
   }
   .slogan {
-    top: -7.5vh;
+    top: -4vh;
   }
 
   h2 {
