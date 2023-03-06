@@ -210,7 +210,7 @@ h2 {
     width: 40%;
   }
   .slogan {
-    top: -7.5vh;
+    top: -4vh;
   }
 
   h2 {
