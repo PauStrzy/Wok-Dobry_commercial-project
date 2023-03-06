@@ -27,11 +27,12 @@ export default {
 </script>
 
 <template>
-  <div class="container">
+  <div class="container" v-cloak>
     <Teleport to="body">
       <newsletter-modal
         :show="showNewsletter"
         @close="showNewsletter = false"
+        v-cloak
       ></newsletter-modal>
     </Teleport>
     <section id="home">
@@ -80,7 +81,6 @@ export default {
   padding-top: 5vh;
   padding-bottom: 5vh;
   height: 100%;
-  min-height: 70vh;
 }
 .wrapper {
   display: flex;
@@ -135,29 +135,42 @@ h2 {
   letter-spacing: 0.1rem;
   text-transform: uppercase;
 }
+#menu {
+  font-size: 1.5rem;
+  background-color: var(--white-pale);
+  box-shadow: 0 0 5px var(--color-border);
+  border-radius: 5px;
+  width: 83%;
+  padding: 4rem 0;
+  margin: 4rem auto;
+}
+#menu h3 {
+  text-decoration: underline;
+}
+
 #contact-us {
   padding-bottom: 5vh;
 }
-#show-newsletter {
+#show-newsletter,
+#show-newsletter:focus {
   padding: 0.5rem 1rem;
   font: inherit;
-  border: 2px solid var(--color-hover);
-  color: inherit;
+  border: 2px solid var(--color-header);
+  color: var(--color-border-hover);
   font-weight: bold;
   border-radius: 8px;
   font-size: 1rem;
   padding: 0.4rem 0.8rem;
-  background-color: #f5e6e6;
+  background-color: var(--color-header);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 #show-newsletter:hover,
 #show-newsletter:active {
   background-color: var(--color-background-pale);
-  color: var(--color-hover);
+  color: var(--color-header);
 }
-@media (min-height: 800px) {
-}
+
 @media (min-width: 420px) {
   section {
     padding-top: 5vh;
@@ -177,13 +190,13 @@ h2 {
   }
 }
 @media (min-width: 760px) {
-  section {
-    padding-top: 10vh;
-    padding-bottom: 0;
+  #home {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
   }
 }
 
-@media (min-width: 1240px) {
+@media (min-width: 992px) {
   #home {
     height: 100%;
     padding-top: 1vh;
@@ -196,27 +209,29 @@ h2 {
   section {
     padding-top: 0;
     padding-bottom: 0;
-    min-height: 80vh;
+    min-height: 50vh;
   }
 
   .logo {
-    left: -20vh;
-    top: 1vh;
-    width: 8rem;
-    height: 8rem;
+    top: 0;
+    padding-top: 2vh;
+    left: -15vh;
+    width: 7rem;
+    height: 7rem;
   }
   .gallery {
-    top: -8vh;
+    top: -5vh;
     width: 40%;
   }
-  .slogan {
-    top: -4vh;
-  }
 
+  .slogan {
+    align-self: flex-end;
+    text-align: right;
+    top: -3vh;
+    right: 2vh;
+  }
   h2 {
-    font-size: 2rem;
-    word-spacing: 0.4rem;
-    letter-spacing: 0.3rem;
+    font-size: 1.3rem;
   }
   #menu {
     font-size: 1.5rem;
@@ -234,20 +249,35 @@ h2 {
     padding-bottom: 10vh;
   }
 }
+@media (min-width: 1224px) {
+  .logo {
+    left: -20vh;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .slogan {
+    top: -5vh;
+    right: 5vh;
+  }
+}
 @media (min-width: 1800px) {
   h2 {
-    font-size: 3rem;
-    word-spacing: 0.5rem;
+    font-size: 2rem;
   }
   .logo {
-    top: 2vh;
+    padding-top: 5vh;
     left: -20vh;
     width: 12rem;
     height: 12rem;
   }
+  .gallery {
+    top: -5vh;
+  }
 
   .slogan {
-    top: -4vh;
+    top: -5vh;
+    right: 5vh;
   }
 }
 </style>

@@ -38,10 +38,13 @@ export default {
 </template>
 
 <style scoped>
-nav.screen {
+.nav-mobile {
   display: none;
 }
-@media (max-width: 1240px) {
+@media (max-width: 992px) {
+  .nav-mobile {
+    display: block;
+  }
   nav.screen {
     display: flex;
     flex-direction: column;
@@ -50,7 +53,7 @@ nav.screen {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: var(--color-background);
     top: 0;
     left: 100%;
     z-index: 100;
@@ -80,6 +83,10 @@ nav.screen {
     font-size: 1.5rem;
     padding: 0.75rem 1.5rem;
     width: 100%;
+
+    -webkit-text-stroke: 1.5px var(--swiper);
+    -webkit-text-fill-color: var(--color-menu);
+    color: transparent;
     text-transform: uppercase;
     font-weight: bold;
   }

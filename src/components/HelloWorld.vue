@@ -6,10 +6,7 @@
 
 <style scoped>
 .brand-name h1 {
-  /* background-color: var(--white-pale);
-  box-shadow: 0 0 5px var(--color-border); */
   font-weight: 400;
-  border-radius: 5px;
   font-size: 2.3rem;
   text-transform: uppercase;
   text-align: center;
@@ -41,18 +38,29 @@
   }
 }
 
+@media (min-width: 992px) {
+  .brand-name h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-left: 5vw;
+    height: 10vh;
+    line-height: 10vh;
+    width: 39%;
+    background-color: var(--background-dark-transparent);
+    text-align: left;
+    font-size: 2.5rem;
+    z-index: 1000000000;
+  }
+}
 @media (min-width: 1240px) {
   .brand-name h1 {
-    background-color: transparent;
-    box-shadow: none;
-    text-align: left;
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 @media (min-width: 1800px) {
   .brand-name h1 {
     letter-spacing: 0.1rem;
-    text-align: left;
     font-size: 4rem;
   }
 }

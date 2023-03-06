@@ -17,12 +17,12 @@ const router = createRouter({
     },
   ],
   scrollBehavior(to, from, savedPosition) {
-    if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: "smooth",
-      };
-    }
+    // if (to.hash) {
+    //   return {
+    //     el: to.hash,
+    //     behavior: "smooth",
+    //   };
+    // }
     if (savedPosition) {
       return savedPosition;
     } else {

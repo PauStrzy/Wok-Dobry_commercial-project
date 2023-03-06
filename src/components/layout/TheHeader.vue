@@ -23,17 +23,24 @@ export default {
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 .wrapper {
   width: 80vw;
   margin: 0 auto;
 }
 
 @media (min-width: 1240px) {
+  .header {
+    width: 100vw;
+    height: 10vh;
+  }
   .wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--background-dark-transparent);
+    height: 10vh;
     width: 100%;
+    z-index: 100000;
   }
 }
 @media (min-width: 1600px) {

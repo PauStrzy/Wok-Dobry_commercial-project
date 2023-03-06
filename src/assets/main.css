@@ -1,5 +1,24 @@
 @import "./base.css";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 200vh;
+  color: var(--color-text);
+  line-height: 1.6;
+  font-family: Roboto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: color 0.5s, background-color 0.5s;
+}
 #app {
   margin: 0 auto;
   padding: 4vh 0;
@@ -7,6 +26,12 @@
   background-color: var(--color-background);
   font-weight: normal;
   font-size: 15px;
+}
+
+h2 {
+  -webkit-text-stroke: 1.9px var(--color-header);
+  -webkit-text-fill-color: var(--color-background);
+  color: transparent;
 }
 
 section {
@@ -51,7 +76,6 @@ a {
 }
 @media (min-width: 1800px) {
   #app {
-    max-width: 1600px;
     padding: 0;
   }
 }

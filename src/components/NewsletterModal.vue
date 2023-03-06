@@ -136,14 +136,14 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
-  color: inherit;
+  color: var(--color-text);
   width: 60rem;
   height: 35rem;
   margin: 2rem auto;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.616);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.795);
   padding: 1rem 1rem;
-  background-color: #ffffff;
+  background-color: var(--color-border-hover);
   max-width: 90%;
 }
 .newsletter-control {
@@ -168,7 +168,8 @@ input {
   font-weight: bold;
   padding: 0.2rem 1rem;
   border: none;
-  border-bottom: 2px solid var(--color-background-pale);
+  background: transparent;
+  border-bottom: 2px solid var(--color-border);
 }
 input::placeholder {
   font-weight: bold;
@@ -193,15 +194,16 @@ select:-webkit-autofill {
   font-size: 0.7rem;
   text-align: justify;
 }
-button {
+button,
+button:active {
   font: inherit;
-  border: 2px solid var(--color-hover);
-  color: inherit;
+  border: 2px solid var(--color-header);
+  color: var(--color-border-hover);
   font-weight: bold;
   border-radius: 8px;
   font-size: 1rem;
   padding: 0.4rem 0.8rem;
-  background-color: #f5e6e6;
+  background-color: var(--color-header);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -212,10 +214,9 @@ button {
   opacity: 1;
 }
 
-button:hover,
-button:active {
+button:hover {
   background-color: var(--color-background-pale);
-  color: var(--color-hover);
+  color: var(--color-header);
 }
 .newsletter-btn-close {
   align-self: end;

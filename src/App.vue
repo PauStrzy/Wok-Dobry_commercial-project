@@ -1,13 +1,22 @@
-<script>
+<script setup>
+import { ref, onBeforeMount } from "vue";
 import { RouterView } from "vue-router";
 import TheHeader from "./components/layout/TheHeader.vue";
 import TheFooter from "./components/layout/TheFooter.vue";
-export default {
-  components: {
-    TheHeader,
-    TheFooter,
-  },
-};
+import TopButton from "./components/ui/TopButton.vue";
+
+onBeforeMount(() => {
+  window.addEventListener("scroll", onScroll);
+});
+
+const showTopButton = ref(false);
+function onScroll() {
+  if (window.scrollY) {
+    showTopButton.value = true;
+  } else {
+    showTopButton.value = false;
+  }
+}
 </script>
 
 <template>
@@ -18,7 +27,7 @@ export default {
       <component :is="slotProps.Component" />
     </transition>
   </router-view>
-
+  <TopButton :showTopButton="showTopButton" />
   <TheFooter />
 </template>
 

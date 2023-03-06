@@ -18,7 +18,7 @@ export default {
 <style scoped>
 .menu-wrapper {
   position: fixed;
-  bottom: 8vh;
+  bottom: 6vh;
   left: calc(50vw - 60px / 2);
   z-index: 1000;
   cursor: pointer;
@@ -27,8 +27,6 @@ export default {
   width: 60px;
   height: 2px;
   border-radius: 8px;
-  transform: scaleY(1);
-  transition: transform 0.9s;
 }
 .bars span,
 .bars:before,
@@ -36,9 +34,10 @@ export default {
   content: "";
   position: absolute;
   width: 100%;
-  border: 2px solid var(--color-text);
-  border-radius: 8px;
-  border-right: 10px solid #1849cf;
+  border: 2px solid var(--color-border);
+  border-bottom-left-radius: 30%;
+  border-top-left-radius: 30%;
+  border-right: 10px solid var(--swiper);
 }
 .bars span {
   border: none;
@@ -63,10 +62,11 @@ export default {
   content: "";
   position: absolute;
   width: 100%;
-  border: 2px solid var(--color-text);
-  border-radius: 8px;
+  border: 2px solid var(--color-border);
+  border-bottom-left-radius: 30%;
+  border-top-left-radius: 30%;
   transform-origin: 70%;
-  border-right: 10px solid #1849cf;
+  border-right: 10px solid var(--swiper);
 }
 .xSign span {
   border: none;

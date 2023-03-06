@@ -17,18 +17,24 @@ import { RouterLink } from "vue-router";
 </template>
 
 <style scoped>
-nav.screen {
+.nav-desktop {
   display: none;
 }
 
-@media (min-width: 1240px) {
+@media (min-width: 992px) {
   .nav-desktop {
-    padding: 0.5rem 0 0 0;
+    display: block;
+    padding: 0;
   }
   nav.screen {
-    display: block;
-    background-color: var(--white-pale);
-    box-shadow: 0 0 4px var(--color-border);
+    background-color: var(--background-dark-transparent);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 61.05%;
+    height: 10vh;
+    padding-right: 5vw;
+    /* box-shadow: 0 0 4px var(--color-menu); */
     z-index: 100000;
   }
 
@@ -36,11 +42,11 @@ nav.screen {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    height: 100%;
+    line-height: 10vh;
   }
   li {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     width: 100%;
     height: 100%;
   }
@@ -49,25 +55,25 @@ nav.screen {
     display: inline-block;
     text-align: center;
     font-size: 1.2rem;
-    padding: 0.4rem 0;
     width: 100%;
     height: 100%;
     text-transform: uppercase;
     text-decoration: none;
     transform: scale(1);
     color: transparent;
-    -webkit-text-stroke: 1.5px var(--text-light-2);
+    -webkit-text-stroke: 1.3px var(--color-menu);
     letter-spacing: 0.2rem;
-    transition: letter-spacing 0.4s;
+    transition: all 0.5s;
   }
   ul li a:hover {
     letter-spacing: 0.3rem;
+    -webkit-text-stroke: 0.3px var(--color-menu);
+    -webkit-text-fill-color: var(--swiper);
   }
 }
 @media (min-width: 1800px) {
   ul li a {
     font-size: 1.5rem;
-    padding: 0.5rem 0;
   }
 }
 </style>
