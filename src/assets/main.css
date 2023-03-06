@@ -6,6 +6,7 @@
   min-height: 200vh;
   background-color: var(--color-background);
   font-weight: normal;
+  font-size: 15px;
 }
 
 section {
@@ -22,14 +23,12 @@ ul {
 a {
   text-decoration: none;
   color: var(--color-text);
-  transform: scale(1);
-  transition: all 0.3s;
+  transition: color 0.5s;
   cursor: pointer;
 }
 @media (hover: hover) {
   a:hover {
     color: var(--color-hover);
-    transform: scale(1.05);
   }
 }
 

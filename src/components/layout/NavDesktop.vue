@@ -22,13 +22,11 @@ nav.screen {
 }
 
 @media (min-width: 1240px) {
+  .nav-desktop {
+    padding: 0.5rem 0 0 0;
+  }
   nav.screen {
     display: block;
-    /* position: fixed;
-    top: 13%;
-    left: 10%;
-    right: 10%;
-    width: 80%; */
     background-color: var(--white-pale);
     box-shadow: 0 0 4px var(--color-border);
     z-index: 100000;
@@ -57,9 +55,6 @@ nav.screen {
     text-transform: uppercase;
     text-decoration: none;
     transform: scale(1);
-    border-bottom: 1px solid;
-    border-top: 1px solid;
-    border-color: var(--color-border);
     color: transparent;
     -webkit-text-stroke: 1.5px var(--text-light-2);
     letter-spacing: 0.2rem;

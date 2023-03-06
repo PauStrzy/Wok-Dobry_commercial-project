@@ -16,7 +16,13 @@ const router = createRouter({
       component: TheMenu,
     },
   ],
-  scrollBehavior(_, _2, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: "smooth",
+      };
+    }
     if (savedPosition) {
       return savedPosition;
     } else {

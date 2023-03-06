@@ -69,7 +69,6 @@ nav.screen {
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* height: 100%; */
   }
   li {
     width: 100%;
@@ -81,7 +80,8 @@ nav.screen {
     font-size: 1.5rem;
     padding: 0.75rem 1.5rem;
     width: 100%;
-    /* font-style: italic; */
+    text-transform: uppercase;
+    font-weight: bold;
   }
 }
 </style>

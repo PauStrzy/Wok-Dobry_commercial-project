@@ -65,6 +65,7 @@ export default {
       userName: "",
       userEmail: "",
       userEmailValidity: "pending",
+      error: null,
     };
   },
   methods: {
@@ -72,8 +73,35 @@ export default {
       if (this.userEmail === "") {
         this.validateInput();
       } else {
-        console.log(this.userName);
-        console.log(this.userEmail);
+        this.error = null;
+        fetch(
+          "https://wok-dobry-default-rtdb.europe-west1.firebasedatabase.app/emails.json",
+          {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify({
+              name: this.userName,
+              email: this.userEmail,
+            }),
+          }
+        )
+          .then((res) => {
+            if (res.ok) {
+              console.log("Email saved to newsletter");
+            } else {
+              throw new Error("Could not add to newsletter!");
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            this.error = error.message;
+            alert(
+              "W tej chwili nasz newsletter jest niedostępny, spróbuj później lub skontaktuj się z nami!"
+            );
+          });
+        this.$emit("close");
         this.clearForm();
       }
     },
@@ -89,7 +117,6 @@ export default {
       this.userEmail = "";
     },
   },
-  mounted() {},
 };
 </script>
 
@@ -109,6 +136,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
+  color: inherit;
   width: 60rem;
   height: 35rem;
   margin: 2rem auto;
@@ -116,7 +144,6 @@ export default {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.616);
   padding: 1rem 1rem;
   background-color: #ffffff;
-  transition: all 0.3s ease;
   max-width: 90%;
 }
 .newsletter-control {
@@ -140,7 +167,6 @@ input {
   color: var(--color-hover);
   font-weight: bold;
   padding: 0.2rem 1rem;
-
   border: none;
   border-bottom: 2px solid var(--color-background-pale);
 }
@@ -209,12 +235,6 @@ button:active {
 }
 .newsletter-leave-to {
   opacity: 0;
-}
-
-.newsletter-enter-from form,
-.newsletter-leave-to form {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
 }
 
 @media (min-width: 1240px) {

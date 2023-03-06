@@ -28,9 +28,6 @@ export default {
 
 <template>
   <div class="container">
-    <!-- <button id="show-newsletter" @click="showNewsletter = true">
-      Newsletter
-    </button> -->
     <Teleport to="body">
       <newsletter-modal
         :show="showNewsletter"
@@ -68,6 +65,9 @@ export default {
     <base-break></base-break>
     <section id="contact-us">
       <contact-us></contact-us>
+      <button id="show-newsletter" @click="showNewsletter = true">
+        Newsletter
+      </button>
     </section>
   </div>
 </template>
@@ -76,8 +76,11 @@ export default {
 #home {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 80vh;
+  align-items: flex-start;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  height: 100%;
+  min-height: 70vh;
 }
 .wrapper {
   display: flex;
@@ -98,8 +101,8 @@ section {
   position: relative;
   top: 5vh;
   right: 25%;
-  width: 8rem;
-  height: 8rem;
+  width: 6rem;
+  height: 6rem;
 }
 .logo img {
   width: 100%;
@@ -126,48 +129,74 @@ section {
   z-index: 30;
 }
 h2 {
-  font-family: fantasy;
-  font-size: 1.5rem;
-  word-spacing: 0.5rem;
-  letter-spacing: 0.2rem;
+  font-weight: 400;
+  font-size: 1.3rem;
+  word-spacing: 0.3rem;
+  letter-spacing: 0.1rem;
   text-transform: uppercase;
 }
 #contact-us {
   padding-bottom: 5vh;
 }
-
+#show-newsletter {
+  padding: 0.5rem 1rem;
+  font: inherit;
+  border: 2px solid var(--color-hover);
+  color: inherit;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #f5e6e6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#show-newsletter:hover,
+#show-newsletter:active {
+  background-color: var(--color-background-pale);
+  color: var(--color-hover);
+}
+@media (min-height: 800px) {
+}
 @media (min-width: 420px) {
   section {
-    padding-top: 10vh;
+    padding-top: 5vh;
     padding-bottom: 0;
     min-height: 80vh;
+  }
+  .logo {
+    width: 8rem;
+    height: 8rem;
   }
   #home {
     display: block;
     height: 70%;
-    width: 90%;
-    margin: 0 auto;
   }
   .gallery {
     width: 45%;
   }
 }
+@media (min-width: 760px) {
+  section {
+    padding-top: 10vh;
+    padding-bottom: 0;
+  }
+}
 
 @media (min-width: 1240px) {
+  #home {
+    height: 100%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
   .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 50%;
+    max-width: 50%;
+    margin: 0 auto;
   }
   section {
     padding-top: 0;
     padding-bottom: 0;
     min-height: 80vh;
-  }
-  #home {
-    height: 100%;
   }
 
   .logo {
@@ -177,8 +206,8 @@ h2 {
     height: 8rem;
   }
   .gallery {
-    top: -15vh;
-    width: 25%;
+    top: -8vh;
+    width: 40%;
   }
   .slogan {
     top: -7.5vh;
@@ -201,6 +230,9 @@ h2 {
   #menu h3 {
     text-decoration: underline;
   }
+  #contact-us {
+    padding-bottom: 10vh;
+  }
 }
 @media (min-width: 1800px) {
   h2 {
@@ -214,10 +246,6 @@ h2 {
     height: 12rem;
   }
 
-  .gallery {
-    top: -8vh;
-    width: 30%;
-  }
   .slogan {
     top: -4vh;
   }

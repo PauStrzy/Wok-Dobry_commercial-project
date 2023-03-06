@@ -15,7 +15,7 @@ export default {
 <template>
   <section class="header">
     <div class="wrapper">
-      <hello-world msg="Wok Dobry!"></hello-world>
+      <hello-world></hello-world>
       <nav-desktop></nav-desktop>
       <nav-mobile></nav-mobile>
     </div>
@@ -32,6 +32,11 @@ header {
 }
 
 @media (min-width: 1240px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+@media (min-width: 1600px) {
   .wrapper {
     width: 100%;
   }

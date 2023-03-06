@@ -1,27 +1,16 @@
-<script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true,
-  },
-});
-</script>
-
 <template>
   <div class="brand-name">
-    <RouterLink to="/"
-      ><h1>{{ msg }}</h1></RouterLink
-    >
+    <RouterLink to="/"><h1>WOK dobry!</h1></RouterLink>
   </div>
 </template>
 
 <style scoped>
 .brand-name h1 {
-  background-color: var(--white-pale);
-  box-shadow: 0 0 5px var(--color-border);
+  /* background-color: var(--white-pale);
+  box-shadow: 0 0 5px var(--color-border); */
+  font-weight: 400;
   border-radius: 5px;
-  font-weight: 500;
-  font-size: 2.6rem;
+  font-size: 2.3rem;
   text-transform: uppercase;
   text-align: center;
   animation: flicker 6s infinite alternate;
