@@ -7,10 +7,10 @@ import { RouterLink } from "vue-router";
     <nav class="screen">
       <ul>
         <li><RouterLink to="/">O nas</RouterLink></li>
-        <li><a href="#menu">Menu</a></li>
+        <li><RouterLink to="/menu">Menu</RouterLink></li>
         <li><a href="#">Dowozy</a></li>
-        <li><a href="#">Galeria</a></li>
-        <li><a href="#contact-us">Kontakt</a></li>
+        <li><RouterLink to="/gallery">Galeria</RouterLink></li>
+        <li><RouterLink to="/contactUs">Kontakt</RouterLink></li>
       </ul>
     </nav>
   </section>
@@ -27,14 +27,12 @@ import { RouterLink } from "vue-router";
     padding: 0;
   }
   nav.screen {
-    background-color: var(--background-dark-transparent);
     position: fixed;
     top: 0;
     right: 0;
     width: 61.05%;
     height: 10vh;
     padding-right: 5vw;
-    /* box-shadow: 0 0 4px var(--color-menu); */
     z-index: 100000;
   }
 

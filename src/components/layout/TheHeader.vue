@@ -35,9 +35,10 @@ export default {
   }
   .wrapper {
     position: fixed;
-    top: 0;
+    top: -2px;
     left: 0;
     background-color: var(--background-dark-transparent);
+    box-shadow: 0 5px 5px var(--background-darker);
     height: 10vh;
     width: 100%;
     z-index: 100000;

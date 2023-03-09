@@ -26,11 +26,11 @@ export default {
       <menu-bar :vis="vis" @toggle-menu="showAndHide"></menu-bar>
       <nav class="screen" :class="vis ? 'active' : null">
         <ul @click="showAndHide">
-          <li><router-link to="/">O nas</router-link></li>
-          <li><a href="#menu">Menu</a></li>
+          <li><RouterLink to="/">O nas</RouterLink></li>
+          <li><RouterLink to="/menu">Menu</RouterLink></li>
           <li><a href="#">Dowozy</a></li>
-          <li><a href="#">Galeria</a></li>
-          <li><a href="#contact-us">Kontakt</a></li>
+          <li><RouterLink to="/gallery">Galeria</RouterLink></li>
+          <li><RouterLink to="/contactUs">Kontakt</RouterLink></li>
         </ul>
       </nav>
     </div>

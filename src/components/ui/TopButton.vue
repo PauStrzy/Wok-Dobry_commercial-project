@@ -33,6 +33,7 @@ function toTop() {
     height: 2.5rem;
     text-align: center;
     transition: color 0.3s;
+    z-index: 50000;
   }
 
   .fa-chevron-up {

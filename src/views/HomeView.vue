@@ -1,11 +1,11 @@
 <script>
-import TheGallery from "../components/TheGallery.vue";
+import LandingPageGallery from "../components/LandingPageGallery.vue";
 import ContactUs from "../components/ContactUs.vue";
 import NewsletterModal from "../components/NewsletterModal.vue";
 
 export default {
   components: {
-    TheGallery,
+    LandingPageGallery,
     ContactUs,
     NewsletterModal,
   },
@@ -13,7 +13,13 @@ export default {
     return {
       isLoading: true,
       showNewsletter: false,
+      hideNewsletter: false,
     };
+  },
+  methods: {
+    closeAndHideNewsletter() {
+      this.showNewsletter = this.showNewsletter;
+    },
   },
   computed: {
     loaded() {
@@ -21,7 +27,7 @@ export default {
     },
   },
   mounted() {
-    this.showNewsletter = true;
+    this.closeAndHideNewsletter();
   },
 };
 </script>
@@ -31,7 +37,7 @@ export default {
     <Teleport to="body">
       <newsletter-modal
         :show="showNewsletter"
-        @close="showNewsletter = false"
+        @close="closeAndHideNewsletter"
         v-cloak
       ></newsletter-modal>
     </Teleport>
@@ -45,7 +51,7 @@ export default {
           <!-- <div v-if="isLoading">
           <base-spinner></base-spinner>
         </div> -->
-          <the-gallery></the-gallery>
+          <landing-page-gallery></landing-page-gallery>
         </div>
 
         <div class="slogan">
@@ -66,7 +72,7 @@ export default {
     <base-break></base-break>
     <section id="contact-us">
       <contact-us></contact-us>
-      <button id="show-newsletter" @click="showNewsletter = true">
+      <button id="show-newsletter" @click="closeAndHideNewsletter">
         Newsletter
       </button>
     </section>
@@ -117,6 +123,7 @@ section {
   justify-content: center;
   align-items: center;
   width: 50vw;
+  min-height: 60vw;
   height: auto;
   z-index: 10;
 }
@@ -222,6 +229,7 @@ h2 {
   .gallery {
     top: -5vh;
     width: 40%;
+    min-height: 60vh;
   }
 
   .slogan {

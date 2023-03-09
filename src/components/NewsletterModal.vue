@@ -1,6 +1,6 @@
 <template>
   <Transition name="newsletter">
-    <div class="newsletter-mask" v-if="show">
+    <div class="newsletter-mask" v-show="show">
       <form class="newsletter-form" @submit.prevent="submitForm">
         <button class="newsletter-btn-close" @click="$emit('close')">X</button>
         <h2>Dołącz do naszego newslettera</h2>
@@ -15,6 +15,7 @@
             name="user-name"
             v-model.trim="userName"
             placeholder="Twoje imię"
+            required
           />
         </div>
         <div

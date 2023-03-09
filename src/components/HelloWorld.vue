@@ -47,7 +47,6 @@
     height: 10vh;
     line-height: 10vh;
     width: 39%;
-    background-color: var(--background-dark-transparent);
     text-align: left;
     font-size: 2.5rem;
     z-index: 1000000000;

@@ -2,12 +2,12 @@
   <section class="menu">
     <div class="menu">
       <h2 class="menu">
-        Pobierz<a href="/"><span>Menu</span></a>
+        Pobierz<a href="/menu"><span>Menu</span></a>
       </h2>
     </div>
   </section>
 </template>
-<script>
+<!-- <script>
 import { watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 export default {
@@ -16,11 +16,11 @@ export default {
     const router = useRouter();
 
     watch(route, () => {
-      router.push("/");
+      // router.push("/");
     });
   },
 };
-</script>
+</script> -->
 
 <style scoped>
 div.menu {
