@@ -1,34 +1,30 @@
 <template>
   <Transition name="newsletter">
     <div class="newsletter-mask" v-show="show">
-      <form class="newsletter-form" @submit.prevent="submitForm">
+      <form class="newsletter-form" @submit.prevent>
         <button class="newsletter-btn-close" @click="$emit('close')">X</button>
         <h2>Dołącz do naszego newslettera</h2>
         <p class="slogan">
           Badź na bieżąco i otrzymaj 10% rabat na pierwsze zamówienie w lokalu!
         </p>
         <div class="newsletter-control">
-          <!-- <label for="user-name">Twoje imię</label> -->
           <input
             type="text"
             id="user-name"
             name="user-name"
             v-model.trim="userName"
             placeholder="Twoje imię"
-            required
           />
         </div>
         <div
           class="newsletter-control"
           :class="{ invalid: userEmailValidity === 'invalid' }"
         >
-          <!-- <label for="email">Adres e-mail</label> -->
           <input
             type="email"
             id="user-email"
             v-model="userEmail"
             placeholder="Adres e-mail"
-            @blur="validateInput"
           />
           <p class="invalid-slogan">Podaj prawidłowy adres e-mail</p>
         </div>
@@ -47,7 +43,9 @@
             </p>
           </label>
         </div>
-        <button class="newsletter-btn-sign-up">Zapisz mnie!</button>
+        <button @click="submitForm" class="newsletter-btn-sign-up">
+          Zapisz mnie!
+        </button>
       </form>
     </div>
   </Transition>
@@ -66,6 +64,7 @@ export default {
       userName: "",
       userEmail: "",
       userEmailValidity: "pending",
+      re: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       error: null,
     };
   },
@@ -104,11 +103,13 @@ export default {
           });
         this.$emit("close");
         this.clearForm();
+        console.log("saved");
       }
     },
     validateInput() {
-      if (this.userEmail === "") {
+      if (!this.userEmail.match(this.re)) {
         this.userEmailValidity = "invalid";
+        return;
       } else {
         this.userEmailValidity = "valid";
       }
@@ -195,8 +196,7 @@ select:-webkit-autofill {
   font-size: 0.7rem;
   text-align: justify;
 }
-button,
-button:active {
+button {
   font: inherit;
   border: 2px solid var(--color-header);
   color: var(--color-border-hover);
@@ -208,6 +208,7 @@ button:active {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .newsletter-control p.invalid-slogan {
   opacity: 0;
 }

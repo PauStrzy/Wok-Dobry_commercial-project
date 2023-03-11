@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     closeAndHideNewsletter() {
-      this.showNewsletter = this.showNewsletter;
+      this.showNewsletter = !this.showNewsletter;
     },
   },
   computed: {
@@ -72,7 +72,7 @@ export default {
     <base-break></base-break>
     <section id="contact-us">
       <contact-us></contact-us>
-      <button id="show-newsletter" @click="closeAndHideNewsletter">
+      <button class="show-newsletter" @click="closeAndHideNewsletter">
         Newsletter
       </button>
     </section>
@@ -84,7 +84,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 5vh;
+  padding-top: 2.5vh;
   padding-bottom: 5vh;
   height: 100%;
 }
@@ -158,8 +158,8 @@ h2 {
 #contact-us {
   padding-bottom: 5vh;
 }
-#show-newsletter,
-#show-newsletter:focus {
+.show-newsletter,
+.show-newsletter:focus {
   padding: 0.5rem 1rem;
   font: inherit;
   border: 2px solid var(--color-header);
@@ -172,8 +172,8 @@ h2 {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-#show-newsletter:hover,
-#show-newsletter:active {
+.show-newsletter:hover,
+.show-newsletter:active {
   background-color: var(--color-background-pale);
   color: var(--color-header);
 }

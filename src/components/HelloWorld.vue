@@ -6,6 +6,7 @@
 
 <style scoped>
 .brand-name h1 {
+  font-family: "Tilt Neon", cursive;
   font-weight: 400;
   font-size: 2.3rem;
   text-transform: uppercase;
@@ -24,8 +25,7 @@
   53%,
   56%,
   100% {
-    text-shadow: 0 0 4px #fae1e1, 0 0 11px #fcdede, 0 0 19px #f88484,
-      0 0 30px #f33737, 0 0 50px #f82a2a, 0 0 70px #f52b2b;
+    text-shadow: 0 0 4px #fae1e1, 0 0 19px #f88484, 0 0 30px #f33737;
     -webkit-text-stroke: 2px var(--color-border);
     -webkit-text-fill-color: #f16666a9;
   }

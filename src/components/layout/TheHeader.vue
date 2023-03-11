@@ -26,14 +26,16 @@ export default {
 .wrapper {
   width: 80vw;
   margin: 0 auto;
+  padding-top: 2.5vh;
 }
 
-@media (min-width: 1240px) {
+@media (min-width: 992px) {
   .header {
     width: 100vw;
     height: 10vh;
   }
   .wrapper {
+    padding-top: 0;
     position: fixed;
     top: -2px;
     left: 0;

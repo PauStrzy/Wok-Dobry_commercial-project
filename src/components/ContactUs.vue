@@ -107,6 +107,7 @@ export default defineComponent({
 }
 .address,
 .social {
+  text-align: center;
   margin: 1rem 0;
 }
 .address-title,
@@ -141,7 +142,7 @@ export default defineComponent({
   font-weight: bold;
 }
 
-@media (min-width: 1240px) {
+@media (min-width: 992px) {
   .information-box {
     flex-direction: row;
     min-height: 30vh;
@@ -152,4 +153,9 @@ export default defineComponent({
     font-size: 1.5rem;
   }
 }
+/* @media (min-width: 1240px) {
+  .container {
+    padding-bottom: 5vh;
+  }
+} */
 </style>
