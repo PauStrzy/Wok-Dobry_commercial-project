@@ -53,14 +53,11 @@ export default {
         </div> -->
           <landing-page-gallery></landing-page-gallery>
         </div>
-
         <div class="slogan">
-          <div class="shadow">
-            <h2>
-              Odkryj smaki<br />
-              azjatyckiej kuchni
-            </h2>
-          </div>
+          <h2>
+            Odkryj smaki<br />
+            azjatyckiej kuchni
+          </h2>
         </div>
       </div>
     </section>
@@ -93,6 +90,9 @@ export default {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  background-image: url("../../img/leaves6.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: var(--white-pale);
   box-shadow: 0 0 5px var(--color-border);
   border-radius: 5px;
@@ -235,6 +235,9 @@ h2 {
   .slogan {
     align-self: flex-end;
     text-align: right;
+    width: auto;
+    padding: 0 10px;
+    background-color: #ffffff94;
     top: -3vh;
     right: 2vh;
   }
@@ -263,29 +266,32 @@ h2 {
     width: 8rem;
     height: 8rem;
   }
-
-  .slogan {
-    top: -5vh;
-    right: 5vh;
+  .gallery {
+    width: 45%;
   }
-}
-@media (min-width: 1800px) {
   h2 {
     font-size: 2rem;
   }
+
+  .slogan {
+    top: -10vh;
+    right: 5vh;
+  }
+}
+@media (min-width: 1440px) {
+  .logo {
+    padding-top: 5vh;
+    left: -20vh;
+    width: 10rem;
+    height: 10rem;
+  }
+}
+@media (min-width: 1800px) {
   .logo {
     padding-top: 5vh;
     left: -20vh;
     width: 12rem;
     height: 12rem;
-  }
-  .gallery {
-    top: -5vh;
-  }
-
-  .slogan {
-    top: -5vh;
-    right: 5vh;
   }
 }
 </style>

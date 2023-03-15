@@ -22,6 +22,8 @@ export default {
   height: 30px;
   bottom: 5vh;
   left: calc(50vw - 60px / 2);
+  /* top: 15px;
+  right: 15px; */
   z-index: 1000;
   cursor: pointer;
 }

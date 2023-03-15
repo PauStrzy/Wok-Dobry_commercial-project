@@ -55,6 +55,7 @@
     --color-border: var(--divider-dark-1);
     --color-border-hover: var(--white-pale);
     --color-text: var(--text-dark-2);
+    --color-header: var(--divider-dark-3);
     --color-hover: var(--divider-dark-1);
     --swiper: var(--divider-dark-2);
   }

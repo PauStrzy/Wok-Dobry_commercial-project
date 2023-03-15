@@ -30,8 +30,7 @@ body {
 }
 
 h2 {
-  -webkit-text-stroke: 1.9px var(--color-header);
-  -webkit-text-fill-color: var(--color-background);
+  -webkit-text-stroke: 1.3px var(--color-header);
   color: transparent;
 }
 h3 {
@@ -70,5 +69,8 @@ a {
   }
   section {
     padding: 1rem 2rem;
+  }
+  h2 {
+    -webkit-text-stroke: 1.9px var(--color-header);
   }
 }

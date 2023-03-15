@@ -10,13 +10,15 @@
     :loop="true"
   >
     <swiper-slide
-      ><img src="../../img/inside_1.png" alt="Inside of Wok Dobry"
+      ><img src="../../img/chickenht.jpg" alt="Chicken satay in a bowl"
     /></swiper-slide>
     <swiper-slide
-      ><img src="../../img/inside_2.png" alt="Inside of Wok Dobry"
+      ><img src="../../img/shrimpscurryht.jpg" alt="Prawn curry in a bowl"
     /></swiper-slide>
     <swiper-slide
-      ><img src="../../img/inside_3.png" alt="Inside of Wok Dobry"
+      ><img
+        src="../../img/shrimpsht.jpg"
+        alt="Tempura breaded shrimps in a bowl"
     /></swiper-slide>
   </swiper>
 </template>
@@ -52,6 +54,7 @@ export default {
   --swiper-navigation-size: 20px;
   --swiper-navigation-color: var(--swiper);
   --swiper-pagination-color: var(--swiper);
+  --swiper-pagination-zindex: 222222;
   border-radius: 5px;
 }
 
