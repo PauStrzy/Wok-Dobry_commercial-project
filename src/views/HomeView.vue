@@ -37,7 +37,7 @@ export default {
     <Teleport to="body">
       <newsletter-modal
         :show="showNewsletter"
-        @close="closeAndHideNewsletter"
+        @clicked="closeAndHideNewsletter"
         v-cloak
       ></newsletter-modal>
     </Teleport>

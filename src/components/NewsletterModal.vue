@@ -2,12 +2,15 @@
   <Transition name="newsletter">
     <div class="newsletter-mask" v-show="show">
       <form class="newsletter-form" @submit.prevent>
-        <button class="newsletter-btn-close" @click="$emit('close')">X</button>
+        <button class="newsletter-btn-close" @click="close">X</button>
         <h2>Dołącz do naszego newslettera</h2>
         <p class="slogan">
           Badź na bieżąco i otrzymaj 10% rabat na pierwsze zamówienie w lokalu!
         </p>
-        <div class="newsletter-control">
+        <div
+          class="newsletter-control"
+          :class="{ invalid: userNameValidity === 'invalid' }"
+        >
           <input
             type="text"
             id="user-name"
@@ -15,6 +18,7 @@
             v-model.trim="userName"
             placeholder="Twoje imię"
           />
+          <p class="invalid-slogan">Podaj imię</p>
         </div>
         <div
           class="newsletter-control"
@@ -37,7 +41,7 @@
               Administratorem danych osobowych jest Wok Dobry. Więcej
               informacji, w tym o zasadach przetwarzania danych osobowych,
               znajdziesz w
-              <a class="terms-link" href="#" @click="$emit('close')"
+              <a class="terms-link" href="#" @click="close"
                 >Regulaminie Newslettera</a
               >.
             </p>
@@ -63,6 +67,7 @@ export default {
     return {
       userName: "",
       userEmail: "",
+      userNameValidity: "pending",
       userEmailValidity: "pending",
       re: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       error: null,
@@ -70,9 +75,19 @@ export default {
   },
   methods: {
     submitForm() {
-      if (this.userEmail === "") {
-        this.validateInput();
+      if (!this.userEmail.match(this.re) && this.userName === "") {
+        this.userEmailValidity = "invalid";
+        this.userNameValidity = "invalid";
+        return;
+      } else if (this.userEmail.match(this.re) && this.userName === "") {
+        this.userEmailValidity = "valid";
+        this.userNameValidity = "invalid";
+      } else if (!this.userEmail.match(this.re)) {
+        this.userEmailValidity = "invalid";
+        this.userNameValidity = "valid";
       } else {
+        this.userEmailValidity = "valid";
+        this.userNameValidity = "valid";
         this.error = null;
         fetch(
           "https://wok-dobry-default-rtdb.europe-west1.firebasedatabase.app/emails.json",
@@ -90,6 +105,7 @@ export default {
           .then((res) => {
             if (res.ok) {
               console.log("Email saved to newsletter");
+              this.newsletterSaved = true;
             } else {
               throw new Error("Could not add to newsletter!");
             }
@@ -101,22 +117,18 @@ export default {
               "W tej chwili nasz newsletter jest niedostępny, spróbuj później lub skontaktuj się z nami!"
             );
           });
-        this.$emit("close");
-        this.clearForm();
+        // this.close();
         console.log("saved");
       }
     },
-    validateInput() {
-      if (!this.userEmail.match(this.re)) {
-        this.userEmailValidity = "invalid";
-        return;
-      } else {
-        this.userEmailValidity = "valid";
-      }
-    },
+
     clearForm() {
       this.userName = "";
       this.userEmail = "";
+    },
+    close() {
+      this.$emit("clicked");
+      this.clearForm();
     },
   },
 };
