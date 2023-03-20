@@ -12,8 +12,7 @@
 export default {
   computed: {
     currentDate() {
-      const current = new Date();
-      const date = current.getFullYear();
+      const date = new Date().getFullYear();
       return date;
     },
   },

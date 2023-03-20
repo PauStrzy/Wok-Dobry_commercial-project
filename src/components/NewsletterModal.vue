@@ -69,39 +69,30 @@ export default {
       userEmail: "",
       userNameValidity: "pending",
       userEmailValidity: "pending",
-      re: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      userEmailRegex:
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       error: null,
     };
   },
   methods: {
     submitForm() {
-      if (!this.userEmail.match(this.re) && this.userName === "") {
-        this.userEmailValidity = "invalid";
-        this.userNameValidity = "invalid";
-        return;
-      } else if (this.userEmail.match(this.re) && this.userName === "") {
-        this.userEmailValidity = "valid";
-        this.userNameValidity = "invalid";
-      } else if (!this.userEmail.match(this.re)) {
-        this.userEmailValidity = "invalid";
-        this.userNameValidity = "valid";
-      } else {
-        this.userEmailValidity = "valid";
-        this.userNameValidity = "valid";
-        this.error = null;
-        fetch(
-          "https://wok-dobry-default-rtdb.europe-west1.firebasedatabase.app/emails.json",
-          {
-            method: "POST",
-            headers: {
-              "Content-type": "application/json",
-            },
-            body: JSON.stringify({
-              name: this.userName,
-              email: this.userEmail,
-            }),
-          }
-        )
+      const emailPassedRegexCheck = this.userEmail.match(this.userEmailRegex);
+      const isUserNameValid = this.userName !== "";
+
+      this.userEmailValidity = emailPassedRegexCheck ? "valid" : "invalid";
+      this.userNameValidity = isUserNameValid ? "valid" : "invalid";
+
+      if (emailPassedRegexCheck && isUserNameValid) {
+        fetch(import.meta.env.VITE_APP_DATABASE_URL, {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            name: this.userName,
+            email: this.userEmail,
+          }),
+        })
           .then((res) => {
             if (res.ok) {
               console.log("Email saved to newsletter");
@@ -117,14 +108,16 @@ export default {
               "W tej chwili nasz newsletter jest niedostępny, spróbuj później lub skontaktuj się z nami!"
             );
           });
-        // this.close();
-        console.log("saved");
+        this.close();
       }
     },
 
     clearForm() {
       this.userName = "";
       this.userEmail = "";
+      this.userNameValidity = "pending";
+      this.userEmailValidity = "pending";
+      this.error = null;
     },
     close() {
       this.$emit("clicked");
