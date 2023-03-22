@@ -6,16 +6,17 @@
     </h3>
     <div class="wrapper">
       <div id="slides" class="slides">
-        <figure id="slide0">
-          <img
-            :src="slides.src[currentSlide]"
-            :alt="slides.attr[currentSlide]"
-          />
-
-          <figcaption>{{ slides.caption[currentSlide] }}</figcaption>
-          <div class="arrow-prev" @click="prevImg()"><p>&laquo;</p></div>
-          <div class="arrow-next" @click="nextImg()"><p>&raquo;</p></div>
-        </figure>
+        <transition name="slide-fade">
+          <figure :key="currentSlide">
+            <img
+              :src="slides[currentSlide].src"
+              :alt="slides[currentSlide].attr"
+            />
+            <figcaption>{{ slides[currentSlide].caption }}</figcaption>
+            <div class="arrow-prev" @click="prevImg()"><p>&laquo;</p></div>
+            <div class="arrow-next" @click="nextImg()"><p>&raquo;</p></div>
+          </figure>
+        </transition>
       </div>
       <nav>
         <ul>
@@ -23,7 +24,7 @@
             <button
               :id="n"
               class="pin"
-              v-for="n in this.slides.src.length"
+              v-for="n in this.slides.length"
               :class="{ selected: n - 1 === this.currentSlide }"
               @click="changeSlide(n)"
             ></button>
@@ -44,44 +45,58 @@
 export default {
   data() {
     return {
-      slides: {
-        src: [
-          "../../img/IMG_0216.jpg",
-          "../../img/IMG_0225.jpg",
-          "../../img/IMG_0267.jpg",
-          "../../img/IMG_0308.jpg",
-          "../../img/IMG_0322.jpg",
-          "../../img/IMG_0432.jpg",
-          "../../img/IMG_0555.jpg",
-          "../../img/IMG_0563.jpg",
-          "../../img/IMG_0574.jpg",
-          "../../img/IMG_0582.jpg",
-        ],
-        attr: [
-          "Tom Yum soup in a bowl",
-          "Tom Kha soup in a bowl",
-          "Curry with shrimps in a bowl",
-          "Shrimps in tempura in a bowl",
-          "Chicken satay in a bowl",
-          "Bowl with shrimps",
-          "Phad thai with shrimps",
-          "Fried noodles with tofu",
-          "Fried noodles with shrimps",
-          "Chicken cashew in a bowl on a table",
-        ],
-        caption: [
-          "Tom Yum - pikantna, azjatycka zupa",
-          "Tom Kha - azjatycka zupa z mleczkiem kokosowym",
-          "Curry z krewetkami",
-          "Krewetki w tempurze",
-          "Chicken Satay - szaszłyki z kurczaka",
-          "Bowl z krewetkami",
-          "Phad Thai z krewetkami - smażony makaron ryżowy",
-          "Smażony makaron z tofu",
-          "Smażony makaron z krewetkami",
-          "Chicken Cashew - kurczak z nerkowcami",
-        ],
-      },
+      slides: [
+        {
+          src: "../../img/IMG_0216.jpg",
+          attr: "Tom Yum soup in a bowl",
+          caption: "Tom Yum - pikantna, azjatycka zupa",
+        },
+        {
+          src: "../../img/IMG_0225.jpg",
+          attr: "Tom Kha soup in a bowl",
+          caption: "Tom Kha - azjatycka zupa z mleczkiem kokosowym",
+        },
+        {
+          src: "../../img/IMG_0267.jpg",
+          attr: "Curry with shrimps in a bowl",
+          caption: "Curry z krewetkami",
+        },
+        {
+          src: "../../img/IMG_0308.jpg",
+          attr: "Shrimps in tempura in a bowl",
+          caption: "Krewetki w tempurze",
+        },
+        {
+          src: "../../img/IMG_0322.jpg",
+          attr: "Chicken satay in a bowl",
+          caption: "Chicken Satay - szaszłyki z kurczaka",
+        },
+        {
+          src: "../../img/IMG_0432.jpg",
+          attr: "Bowl with shrimps",
+          caption: "Bowl z krewetkami",
+        },
+        {
+          src: "../../img/IMG_0555.jpg",
+          attr: "Pad thai with shrimps",
+          caption: "Pad Thai z krewetkami - smażony makaron ryżowy",
+        },
+        {
+          src: "../../img/IMG_0563.jpg",
+          attr: "Fried noodles with tofu",
+          caption: "Smażony makaron z tofu",
+        },
+        {
+          src: "../../img/IMG_0574.jpg",
+          attr: "Fried noodles with shrimps",
+          caption: "Smażony makaron z krewetkami",
+        },
+        {
+          src: "../../img/IMG_0582.jpg",
+          attr: "Chicken cashew in a bowl on a table",
+          caption: "Chicken Cashew - kurczak z nerkowcami",
+        },
+      ],
       currentSlide: 0,
       slideShow: null,
       play: false,
@@ -89,7 +104,7 @@ export default {
   },
   methods: {
     nextImg() {
-      if (this.currentSlide < this.slides.src.length - 1) {
+      if (this.currentSlide < this.slides.length - 1) {
         this.currentSlide++;
       } else {
         this.currentSlide = 0;
@@ -99,7 +114,7 @@ export default {
       if (this.currentSlide > 0) {
         this.currentSlide--;
       } else {
-        this.currentSlide = this.slides.src.length - 1;
+        this.currentSlide = this.slides.length - 1;
       }
     },
     changeSlide(n) {
@@ -117,6 +132,10 @@ export default {
 </script>
 
 <style scoped>
+.slide-fade-enter,
+.slide-fade-leave-to {
+  opacity: 0;
+}
 #gallery {
   display: flex;
   flex-direction: column;
@@ -165,7 +184,7 @@ export default {
   height: 100%;
   margin: 0;
   padding: 0;
-  transition: 1.2s;
+  transition: opacity 1s ease-out;
 }
 .slides figure:first-child {
   position: relative;
@@ -177,7 +196,6 @@ export default {
   right: 0.35em;
   padding: 0.25em;
   font-size: 1rem;
-  /* -webkit-text-stroke: 1px var(--color-header); */
   color: var(--color-text);
   background: rgba(255, 255, 255, 0.541);
 }

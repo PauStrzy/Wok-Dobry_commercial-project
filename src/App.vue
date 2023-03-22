@@ -11,7 +11,7 @@ onBeforeMount(() => {
 
 const showTopButton = ref(false);
 function onScroll() {
-  window.scrollY ? (showTopButton.value = true) : (showTopButton.value = false);
+  showTopButton.value = !!window.scrollY;
 }
 </script>
 
