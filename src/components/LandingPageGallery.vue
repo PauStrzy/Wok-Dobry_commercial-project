@@ -3,6 +3,7 @@
     :spaceBetween="30"
     :effect="'fade'"
     :navigation="true"
+    :autoplay="{ delay: 3500, disableOnInteraction: false }"
     :pagination="{
       clickable: true,
     }"

@@ -45,4 +45,9 @@ p {
 span {
   font-weight: bold;
 }
+@media (min-width: 992px) {
+  p {
+    font-size: 0.8rem;
+  }
+}
 </style>

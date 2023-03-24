@@ -18,17 +18,18 @@ export default {
 <style scoped>
 .menu-wrapper {
   position: fixed;
-  width: 60px;
+  width: 45px;
   height: 30px;
-  bottom: 5vh;
-  left: calc(50vw - 60px / 2);
-  /* top: 15px;
-  right: 15px; */
+  /* bottom: 5vh;
+  left: calc(50vw - 60px / 2); */
+  top: 15px;
+  right: 15px;
   z-index: 1000;
   cursor: pointer;
 }
 .bars {
-  width: 60px;
+  /* width: 60px; */
+  width: 45px;
   height: 30px;
   border-radius: 8px;
 }
@@ -56,7 +57,8 @@ export default {
 }
 
 .xSign {
-  width: 60px;
+  /* width: 60px; */
+  width: 45px;
   height: 30px;
   border-radius: 8px;
   transition: transform 0.9s;

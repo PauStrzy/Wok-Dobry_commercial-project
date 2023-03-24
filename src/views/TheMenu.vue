@@ -7,20 +7,7 @@
     </div>
   </section>
 </template>
-<!-- <script>
-import { watch } from "vue";
-import { useRoute, useRouter } from "vue-router";
-export default {
-  setup() {
-    const route = useRoute();
-    const router = useRouter();
 
-    watch(route, () => {
-      // router.push("/");
-    });
-  },
-};
-</script> -->
 
 <style scoped>
 div.menu {

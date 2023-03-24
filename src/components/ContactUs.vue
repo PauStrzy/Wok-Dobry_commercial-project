@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <section class="container">
     <div class="map">
-      <h3 class="map-title">Tu jesteśmy!</h3>
+      <h3 class="map-title title">Tu jesteśmy!</h3>
       <div class="map-object">
         <GoogleMap
           api-key="AIzaSyCOZoC1vUQb2E0L5EynB4TPIY7p1KUu2Qo"
@@ -23,15 +23,12 @@
       </div>
     </div>
     <div class="information-box">
-      <div class="address">
-        <h3 class="address-title">Adres:</h3>
-        <ul class="address-list">
-          <li>ul. Braterstwa Narodów 53</li>
-          <li>82-500 Kwidzyn</li>
-
+      <div class="contact-details">
+        <h3 class="contact-details-title title">Dane kontaktowe</h3>
+        <ul class="contact-details-list">
           <li>
             <a href="tel:+48792612888"
-              ><i class="fa-regular fa-comment icon"></i> 792 612 888</a
+              ><i class="fa-regular fa-comment icon"></i> 665 956 206</a
             >
           </li>
           <li>
@@ -41,9 +38,28 @@
           </li>
         </ul>
       </div>
+      <div class="address">
+        <h3 class="address-title title">Adres</h3>
+        <ul class="address-list">
+          <li>ul. Braterstwa Narodów 53</li>
+          <li>82-500 Kwidzyn</li>
+        </ul>
+      </div>
+      <div class="hours">
+        <h3 class="hours-title title">Godziny otwarcia:</h3>
+        <ul class="hours-list">
+          <li>pon. - czw. 12:00 - 21:00</li>
+          <li>pt. - sb. 12:00 - 22:00</li>
+          <li>nd. 12:00 - 20:00</li>
+        </ul>
+      </div>
       <div class="social">
-        <h3 class="social-title">Sprawdź nas tutaj:</h3>
-        <a href="#" class="social-link"
+        <h3 class="social-title title">Social Media</h3>
+        <a
+          href="https://www.facebook.com/profile.php?id=100066918998934"
+          class="social-link"
+          target="_blank"
+          rel="noopener noreferrer"
           ><i class="fab fa-facebook-square icon"></i> Facebook</a
         >
         <a href="#" class="social-link"
@@ -51,7 +67,7 @@
         >
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <script>
 import { defineComponent } from "vue";
@@ -79,9 +95,9 @@ export default defineComponent({
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: 100%;
   height: 100%;
-  margin: 1rem 0;
+  margin: 1rem auto;
   box-shadow: 0 0 5px var(--color-border);
   background-color: var(--white-pale);
   border-radius: 5px;
@@ -98,44 +114,48 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
   margin: 2rem 0;
-  padding: 1rem 0;
-  width: 90%;
+  padding: 2rem 0;
+  width: 100%;
   min-height: 50vh;
   background-color: var(--white-pale);
   box-shadow: 0 0 5px var(--color-border);
   border-radius: 5px;
 }
 .address,
-.social {
+.social,
+.hours,
+.contact-details {
   text-align: center;
   margin: 1rem 0;
 }
-.address-title,
-.social-title,
-.map-title {
-  margin: 1.5rem 0;
+
+.title {
+  margin: 0.5rem 0;
   text-transform: uppercase;
   font-weight: bold;
 }
-.address-list {
+.address-list,
+.hours-list,
+.contact-details-list {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.address-list li:nth-of-type(3) {
-  margin-top: 1rem;
-}
 
-.social-link,
-.address-list a {
+.contact-details a {
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
 }
+.social-link {
+  font-weight: bold;
+  padding: 0 1rem;
+  font-size: 1rem;
+}
 .icon {
-  font-size: 1.3rem;
-  padding: 0.5rem;
+  font-size: 1rem;
+  padding: 0.5rem 0.3rem 0.5rem 0;
   font-weight: bold;
 }
 .contentInfo p {
@@ -145,17 +165,43 @@ export default defineComponent({
 @media (min-width: 992px) {
   .information-box {
     flex-direction: row;
-    min-height: 30vh;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 25vh;
+    flex-wrap: wrap;
   }
-  .address-title,
-  .social-title,
-  .map-title {
-    font-size: 1.5rem;
+
+  .social {
+    flex-basis: 100%;
+  }
+  .address {
+    flex-basis: 30%;
+  }
+  .contact-details {
+    flex-basis: 30%;
+  }
+  .hours {
+    flex-basis: 30%;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .social-link {
+    font-size: 1.2rem;
+  }
+  .social-link .icon {
+    font-size: 1.2rem;
   }
 }
-/* @media (min-width: 1240px) {
+@media (min-width: 1240px) {
   .container {
     padding-bottom: 5vh;
   }
-} */
+  .map-title {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.2rem;
+    padding: 1vh 0;
+  }
+}
 </style>

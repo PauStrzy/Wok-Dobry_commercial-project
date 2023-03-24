@@ -1,6 +1,7 @@
 <script>
 import LandingPageGallery from "../components/LandingPageGallery.vue";
 import ContactUs from "../components/ContactUs.vue";
+import MenuRepresentatives from "../components/MenuRepresentatives.vue";
 import NewsletterModal from "../components/NewsletterModal.vue";
 
 export default {
@@ -8,6 +9,7 @@ export default {
     LandingPageGallery,
     ContactUs,
     NewsletterModal,
+    MenuRepresentatives,
   },
   data() {
     return {
@@ -26,9 +28,9 @@ export default {
       return (this.isLoading = false);
     },
   },
-  mounted() {
-    this.closeAndHideNewsletter();
-  },
+  // mounted() {
+  //   this.closeAndHideNewsletter();
+  // },
 };
 </script>
 
@@ -62,40 +64,32 @@ export default {
       </div>
     </section>
     <base-break></base-break>
-    <section id="menu">
-      <p>Sprawdź aktualne</p>
-      <RouterLink to="/menu"><h3>MENU</h3></RouterLink>
-    </section>
+    <menu-representatives></menu-representatives>
     <base-break></base-break>
-    <section id="contact-us">
-      <contact-us></contact-us>
-      <button class="show-newsletter" @click="closeAndHideNewsletter">
-        Newsletter
-      </button>
-    </section>
+    <contact-us></contact-us>
+    <button class="show-newsletter" @click="closeAndHideNewsletter">
+      Newsletter
+    </button>
   </div>
 </template>
 
 <style scoped>
 #home {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   padding-top: 2.5vh;
-  padding-bottom: 5vh;
-  height: 100%;
+  min-height: 80vh;
 }
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 90vw;
   background-image: url("../../img/leaves6.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: var(--white-pale);
-  box-shadow: 0 0 5px var(--color-border);
-  border-radius: 5px;
+  box-shadow: 0 0 0.5rem var(--color-border);
+  border-radius: 0.5rem;
 }
 
 section {
@@ -105,8 +99,8 @@ section {
 
 .logo {
   position: relative;
-  top: 5vh;
-  right: 25%;
+  top: 10vh;
+  left: 25vw;
   width: 6rem;
   height: 6rem;
 }
@@ -118,20 +112,20 @@ section {
 
 .gallery {
   position: relative;
-  top: -5vh;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50vw;
-  min-height: 60vw;
+  width: 70vw;
+  min-height: 60vh;
   height: auto;
   z-index: 10;
 }
 
 .slogan {
   position: relative;
-  top: -2.5vh;
-  width: 80vw;
+  top: 0;
+  width: 90vw;
   text-align: center;
   z-index: 30;
 }
@@ -142,40 +136,9 @@ h2 {
   letter-spacing: 0.1rem;
   text-transform: uppercase;
 }
-#menu {
-  font-size: 1.5rem;
-  background-color: var(--white-pale);
-  box-shadow: 0 0 5px var(--color-border);
-  border-radius: 5px;
-  width: 83%;
-  padding: 4rem 0;
-  margin: 4rem auto;
-}
-#menu h3 {
-  text-decoration: underline;
-}
-
-#contact-us {
-  padding-bottom: 5vh;
-}
-.show-newsletter,
-.show-newsletter:focus {
-  padding: 0.5rem 1rem;
-  font: inherit;
-  border: 2px solid var(--color-header);
-  color: var(--color-border-hover);
-  font-weight: bold;
-  border-radius: 8px;
-  font-size: 1rem;
-  padding: 0.4rem 0.8rem;
-  background-color: var(--color-header);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.show-newsletter:hover,
-.show-newsletter:active {
-  background-color: var(--color-background-pale);
-  color: var(--color-header);
+.show-newsletter {
+  display: block;
+  margin: 0 auto 3vh;
 }
 
 @media (min-width: 420px) {
@@ -213,11 +176,6 @@ h2 {
     max-width: 50%;
     margin: 0 auto;
   }
-  section {
-    padding-top: 0;
-    padding-bottom: 0;
-    min-height: 50vh;
-  }
 
   .logo {
     top: 0;
@@ -228,8 +186,7 @@ h2 {
   }
   .gallery {
     top: -5vh;
-    width: 40%;
-    min-height: 60vh;
+    width: 20rem;
   }
 
   .slogan {
@@ -244,20 +201,8 @@ h2 {
   h2 {
     font-size: 1.3rem;
   }
-  #menu {
-    font-size: 1.5rem;
-    background-color: var(--white-pale);
-    box-shadow: 0 0 5px var(--color-border);
-    border-radius: 5px;
-    width: 83%;
-    padding: 4rem 0;
-    margin: 4rem auto;
-  }
-  #menu h3 {
-    text-decoration: underline;
-  }
-  #contact-us {
-    padding-bottom: 10vh;
+  .show-newsletter {
+    margin: 0 auto 5vh;
   }
 }
 @media (min-width: 1224px) {

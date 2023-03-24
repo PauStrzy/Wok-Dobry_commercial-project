@@ -54,7 +54,7 @@ export default {
         {
           src: "../../img/IMG_0225.jpg",
           attr: "Tom Kha soup in a bowl",
-          caption: "Tom Kha - azjatycka zupa z mleczkiem kokosowym",
+          caption: "Tom Kha - aromatyczna zupa z mleczkiem kokosowym",
         },
         {
           src: "../../img/IMG_0267.jpg",
@@ -69,7 +69,7 @@ export default {
         {
           src: "../../img/IMG_0322.jpg",
           attr: "Chicken satay in a bowl",
-          caption: "Chicken Satay - szaszłyki z kurczaka",
+          caption: "Chicken Satay - szaszłyki z kurczakiem",
         },
         {
           src: "../../img/IMG_0432.jpg",
@@ -79,7 +79,7 @@ export default {
         {
           src: "../../img/IMG_0555.jpg",
           attr: "Pad thai with shrimps",
-          caption: "Pad Thai z krewetkami - smażony makaron ryżowy",
+          caption: "Pad Thai - smażony makaron ryżowy z krewetkami",
         },
         {
           src: "../../img/IMG_0563.jpg",
@@ -128,6 +128,9 @@ export default {
       }
     },
   },
+  mounted() {
+    this.playOnOff();
+  },
 };
 </script>
 
@@ -143,12 +146,12 @@ export default {
   align-items: center;
   padding-top: 2.5vh;
   padding-bottom: 5vh;
-  height: 85vh;
+  min-height: 80vh;
 }
 .gallery-header {
   font-size: 0.8rem;
   width: 100%;
-  padding: 0.8rem 0.8rem;
+  padding: 0.4rem 0.2rem;
   background-color: var(--white-pale);
   box-shadow: 0 0 5px var(--color-border);
   border-radius: 5px;
@@ -160,7 +163,7 @@ export default {
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
-  padding-bottom: 0.4rem;
+  padding: 0.2rem 0;
 }
 .wrapper {
   margin-top: 4vh;
@@ -192,12 +195,14 @@ export default {
 
 .slides figcaption {
   position: absolute;
-  bottom: 0.75em;
-  right: 0.35em;
-  padding: 0.25em;
-  font-size: 1rem;
+  text-align: center;
+  bottom: 0.75rem;
+  right: 0;
+  left: 0;
+  padding: 0.2rem 0;
+  font-size: 0.8rem;
   color: var(--color-text);
-  background: rgba(255, 255, 255, 0.541);
+  background: rgba(255, 217, 217, 0.418);
 }
 
 img {
@@ -226,7 +231,7 @@ img {
 .arrow-prev:hover,
 .arrow-prev:active,
 .arrow-next:hover,
-.arrow-next:active {
+.arrow-next:focus {
   color: var(--color-border);
 }
 .arrow-prev {
@@ -253,10 +258,12 @@ nav ul > li {
   list-style-type: none;
 }
 nav ul > li button {
+  margin: 0;
+  padding: 0;
   width: 15px;
   height: 20px;
-  line-height: 1rem;
-  font-size: 1.5rem;
+  line-height: 2rem;
+  font-size: 2rem;
   opacity: 0.6;
   background: none;
   -webkit-text-stroke: 1.9px var(--color-header);
@@ -276,10 +283,10 @@ nav button.play {
   background: none;
   width: 30px;
   height: 20px;
-  font-size: 1rem;
-  line-height: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
   color: transparent;
-  -webkit-text-stroke: 1.9px var(--color-header);
+  -webkit-text-stroke: 1.5px var(--color-header);
   opacity: 0.6;
   transition: opacity 0.3s ease-out;
   cursor: pointer;
@@ -293,7 +300,7 @@ nav button.play:before {
   width: 100%;
 }
 nav button.play.on:before {
-  content: "\23F9";
+  content: "\2225";
 }
 nav ul > li button:before {
   content: "\2022";
@@ -314,6 +321,13 @@ nav ul > li button.selected {
   }
   .wrapper {
     max-width: 1200px;
+  }
+  .gallery-header {
+    font-size: 1rem;
+  }
+
+  .slides figcaption {
+    font-size: 1.2rem;
   }
 }
 </style>
