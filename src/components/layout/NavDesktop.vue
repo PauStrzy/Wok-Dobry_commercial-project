@@ -8,7 +8,6 @@ import { RouterLink } from "vue-router";
       <ul>
         <li><RouterLink to="/">O nas</RouterLink></li>
         <li><RouterLink to="/menu">Menu</RouterLink></li>
-        <li><a href="#">Dowozy</a></li>
         <li><RouterLink to="/gallery">Galeria</RouterLink></li>
         <li><RouterLink to="/contactUs">Kontakt</RouterLink></li>
       </ul>

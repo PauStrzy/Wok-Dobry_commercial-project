@@ -62,7 +62,11 @@
           rel="noopener noreferrer"
           ><i class="fab fa-facebook-square icon"></i> Facebook</a
         >
-        <a href="#" class="social-link"
+        <a
+          href="https://instagram.com/wokdobry?igshid=YmMyMTA2M2Y="
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-link"
           ><i class="fab fa-instagram icon"></i>Instagram</a
         >
       </div>

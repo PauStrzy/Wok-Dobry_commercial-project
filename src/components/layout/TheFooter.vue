@@ -1,9 +1,7 @@
 <template>
   <footer>
     <div class="wrapper">
-      <p>
-        © {{ currentDate }} <span>WOK DOBRY</span> | kuchnia azjatycka - Kwidzyn
-      </p>
+      <p>© {{ currentDate }} <span>WOK Dobry</span> | Kwidzyn</p>
     </div>
   </footer>
 </template>
@@ -40,7 +38,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 0.6rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 span {
   font-weight: bold;

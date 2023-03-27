@@ -71,16 +71,16 @@ h4.dish-title {
   width: 100%;
   border-bottom: 1px solid var(--color-text);
   font-weight: bold;
-  padding: 0 2vw;
+  padding: 0 5vw;
 }
 .dish-container {
   display: flex;
   justify-content: space-between;
+  padding: 0 5vw;
 }
 
 .dish-ingredients {
   font-style: italic;
-  padding: 0 2vw;
 }
 .dish-img {
   width: 30vw;
@@ -97,7 +97,6 @@ h4.dish-title {
   text-align: left;
 }
 .dish-description {
-  border-top: 1px solid var(--color-header);
   display: inline-block;
   text-align: justify;
   text-justify: auto;
@@ -127,7 +126,6 @@ h4.dish-title {
   }
 
   .dish-description {
-    border-top: 2px solid var(--color-header);
     font-size: 1.2rem;
     padding: 2vh 5vw 0 5vw;
   }
@@ -144,7 +142,6 @@ h4.dish-title {
   }
   .menu-lettering {
     font-size: 10rem;
-    /* margin: 0 0 0 5vh; */
   }
   h4.dish-title {
     font-size: 3rem;

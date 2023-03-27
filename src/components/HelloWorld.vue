@@ -1,6 +1,6 @@
 <template>
   <div class="brand-name">
-    <RouterLink to="/"><h1>WOK dobry!</h1></RouterLink>
+    <RouterLink to="/"><h1>WOK Dobry!</h1></RouterLink>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
   font-family: "Tilt Neon", cursive;
   font-weight: 400;
   font-size: 2.3rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   text-align: center;
   animation: flicker 6s infinite alternate;
   color: transparent;

@@ -142,10 +142,9 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: stretch;
   color: var(--color-text);
   width: 60rem;
-  height: 35rem;
+  min-height: 35rem;
   margin: 2rem auto;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.795);
@@ -226,12 +225,9 @@ button:hover {
   color: var(--color-header);
 }
 .newsletter-btn-close {
-  align-self: end;
   padding: 0.1rem 0.5rem;
-}
-
-.newsletter-btn-sign-up {
-  align-self: center;
+  margin: 0;
+  align-self: end;
 }
 
 .terms-link {

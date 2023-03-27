@@ -45,21 +45,25 @@ export default {
     </Teleport>
     <section id="home">
       <div class="wrapper">
-        <div class="logo">
-          <img src="../../img/logo_1.png" alt="logo Wok Dobry" />
-        </div>
+        <img
+          src="../../img/leaves6.png"
+          alt="leafs background"
+          class="bg-img"
+        />
+        <div class="container-home">
+          <div class="logo">
+            <img src="../../img/logo_1.png" alt="logo Wok Dobry" />
+          </div>
 
-        <div class="gallery">
-          <!-- <div v-if="isLoading">
-          <base-spinner></base-spinner>
-        </div> -->
-          <landing-page-gallery></landing-page-gallery>
-        </div>
-        <div class="slogan">
-          <h2>
-            Odkryj smaki<br />
-            azjatyckiej kuchni
-          </h2>
+          <div class="gallery">
+            <landing-page-gallery></landing-page-gallery>
+          </div>
+          <div class="slogan">
+            <h2>
+              Odkryj smaki<br />
+              azjatyckiej kuchni
+            </h2>
+          </div>
         </div>
       </div>
     </section>
@@ -79,17 +83,27 @@ export default {
   min-height: 80vh;
 }
 .wrapper {
+  position: relative;
+  width: 90vw;
+  background-color: var(--white-pale);
+  box-shadow: 0 0 0.5rem var(--color-border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 25;
+}
+
+.container-home {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 90vw;
-  background-image: url("../../img/leaves6.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: var(--white-pale);
-  box-shadow: 0 0 0.5rem var(--color-border);
-  border-radius: 0.5rem;
 }
 
 section {
@@ -99,8 +113,8 @@ section {
 
 .logo {
   position: relative;
-  top: 10vh;
-  left: 25vw;
+  top: 5rem;
+  left: 6rem;
   width: 6rem;
   height: 6rem;
 }
@@ -116,8 +130,8 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70vw;
-  min-height: 60vh;
+  width: 20rem;
+  max-width: 80%;
   height: auto;
   z-index: 10;
 }
@@ -148,15 +162,14 @@ h2 {
     min-height: 80vh;
   }
   .logo {
+    top: 6rem;
+    left: 8rem;
     width: 8rem;
     height: 8rem;
   }
   #home {
     display: block;
     height: 70%;
-  }
-  .gallery {
-    width: 45%;
   }
 }
 @media (min-width: 760px) {
@@ -177,18 +190,6 @@ h2 {
     margin: 0 auto;
   }
 
-  .logo {
-    top: 0;
-    padding-top: 2vh;
-    left: -15vh;
-    width: 7rem;
-    height: 7rem;
-  }
-  .gallery {
-    top: -5vh;
-    width: 20rem;
-  }
-
   .slogan {
     align-self: flex-end;
     text-align: right;
@@ -206,13 +207,8 @@ h2 {
   }
 }
 @media (min-width: 1224px) {
-  .logo {
-    left: -20vh;
-    width: 8rem;
-    height: 8rem;
-  }
   .gallery {
-    width: 45%;
+    width: 25rem;
   }
   h2 {
     font-size: 2rem;
@@ -222,19 +218,19 @@ h2 {
     top: -10vh;
     right: 5vh;
   }
-}
-@media (min-width: 1440px) {
+
   .logo {
-    padding-top: 5vh;
-    left: -20vh;
+    top: 8rem;
+    left: 10rem;
     width: 10rem;
     height: 10rem;
   }
 }
+
 @media (min-width: 1800px) {
   .logo {
-    padding-top: 5vh;
-    left: -20vh;
+    top: 10rem;
+    left: 12rem;
     width: 12rem;
     height: 12rem;
   }
