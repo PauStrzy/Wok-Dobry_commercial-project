@@ -38,12 +38,7 @@
               Zapisując się do newslettera zgadzasz się na otrzymywanie od nas
               informacji handlowych drogą elektroniczną. Zgoda jest dobrowolna,
               możesz ją wycofać w każdym momencie bez podawania przyczyny.
-              Administratorem danych osobowych jest Wok Dobry. Więcej
-              informacji, w tym o zasadach przetwarzania danych osobowych,
-              znajdziesz w
-              <a class="terms-link" href="#" @click="close"
-                >Regulaminie Newslettera</a
-              >.
+              Administratorem danych osobowych jest Wok Dobry.
             </p>
           </label>
         </div>
