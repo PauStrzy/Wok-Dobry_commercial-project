@@ -2,7 +2,7 @@
   <section class="menu">
     <div class="menu">
       <h2 class="menu">
-        Pobierz<a href="/menu"><span>Menu</span></a>
+        Pobierz<a href="#"><span>Menu</span></a>
       </h2>
     </div>
   </section>
