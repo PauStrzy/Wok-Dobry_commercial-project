@@ -42,57 +42,68 @@
 </template>
 
 <script>
+import img1 from "../../img/IMG_0216.jpg";
+import img2 from "../../img/IMG_0225.jpg";
+import img3 from "../../img/IMG_0267.jpg";
+import img4 from "../../img/IMG_0308.jpg";
+import img5 from "../../img/IMG_0322.jpg";
+import img6 from "../../img/IMG_0432.jpg";
+import img7 from "../../img/IMG_0555.jpg";
+import img8 from "../../img/IMG_0563.jpg";
+import img9 from "../../img/IMG_0574.jpg";
+import img10 from "../../img/IMG_0582.jpg";
+
 export default {
   data() {
     return {
       slides: [
         {
-          src: "../../img/IMG_0216.jpg",
+          src: img1,
           attr: "Tom Yum soup in a bowl",
           caption: "Tom Yum - pikantna, azjatycka zupa",
         },
         {
-          src: "../../img/IMG_0225.jpg",
+          src: img2,
           attr: "Tom Kha soup in a bowl",
           caption: "Tom Kha - aromatyczna zupa z mleczkiem kokosowym",
         },
         {
-          src: "../../img/IMG_0267.jpg",
+          src: img3,
           attr: "Curry with shrimps in a bowl",
           caption: "Curry z krewetkami",
         },
         {
-          src: "../../img/IMG_0308.jpg",
+          src: img4,
           attr: "Shrimps in tempura in a bowl",
           caption: "Krewetki w tempurze",
         },
         {
-          src: "../../img/IMG_0322.jpg",
+          src: img5,
           attr: "Chicken satay in a bowl",
           caption: "Chicken Satay - szaszłyki z kurczakiem",
         },
         {
-          src: "../../img/IMG_0432.jpg",
+          src: img6,
           attr: "Bowl with shrimps",
           caption: "Bowl z krewetkami",
         },
         {
-          src: "../../img/IMG_0555.jpg",
+          src: img7,
           attr: "Pad thai with shrimps",
           caption: "Pad Thai - smażony makaron ryżowy z krewetkami",
         },
         {
-          src: "../../img/IMG_0563.jpg",
+          src: img8,
           attr: "Fried noodles with tofu",
           caption: "Smażony makaron z tofu",
         },
         {
-          src: "../../img/IMG_0574.jpg",
+          src: img9,
           attr: "Fried noodles with shrimps",
           caption: "Smażony makaron z krewetkami",
         },
         {
-          src: "../../img/IMG_0582.jpg",
+          src: img10,
           attr: "Chicken cashew in a bowl on a table",
           caption: "Chicken Cashew - kurczak z nerkowcami",
         },

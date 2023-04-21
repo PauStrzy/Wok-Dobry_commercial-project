@@ -5,11 +5,10 @@ register();
 
 import App from "./App.vue";
 import router from "./router";
-import "../img";
-import { library } from "@fontawesome/fontawesome-svg-core";
-import { faChevronUp } from "@fontawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
-import { FontAwesomeIcon } from "@fontawesome/vue-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 library.add(faChevronUp);
 
 import BaseSpinner from "./components/ui/BaseSpinner.vue";
