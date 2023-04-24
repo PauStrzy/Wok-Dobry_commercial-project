@@ -13,8 +13,8 @@
               :alt="slides[currentSlide].attr"
             />
             <figcaption>{{ slides[currentSlide].caption }}</figcaption>
-            <div class="arrow-prev" @click="prevImg()"><p>stop</p></div>
-            <div class="arrow-next" @click="nextImg()"><p>play</p></div>
+            <div class="arrow-prev" @click="prevImg()"><p>&laquo;</p></div>
+            <div class="arrow-next" @click="nextImg()"><p>&raquo;</p></div>
           </figure>
         </transition>
       </div>
@@ -235,14 +235,15 @@ img {
   opacity: 0.7;
   z-index: 4;
   line-height: 40px;
-  color: var(--color-border);
+  -webkit-text-stroke: 1.9px var(--color-header);
+  color: #dd151550;
   transition: color 0.3s ease-out;
 }
 .arrow-prev:hover,
 .arrow-prev:active,
 .arrow-next:hover,
 .arrow-next:focus {
-  color: var(--text-light-1);
+  color: var(--color-border);
 }
 .arrow-prev {
   left: 0;
@@ -288,7 +289,7 @@ nav button.play:active {
 }
 nav button.play {
   position: absolute;
-  right: 0;
+  right: 2rem;
   bottom: 0;
   background: none;
   width: 30px;
@@ -303,14 +304,14 @@ nav button.play {
 }
 
 nav button.play:before {
-  content: "\25B6";
+  content: "play";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 }
 nav button.play.on:before {
-  content: "\2225";
+  content: "stop";
 }
 nav ul > li button:before {
   content: "\2022";
