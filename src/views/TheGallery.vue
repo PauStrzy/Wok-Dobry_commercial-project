@@ -235,15 +235,14 @@ img {
   opacity: 0.7;
   z-index: 4;
   line-height: 40px;
-  -webkit-text-stroke: 1.9px var(--color-header);
-  color: #dd151550;
+  color: var(--color-border);
   transition: color 0.3s ease-out;
 }
 .arrow-prev:hover,
 .arrow-prev:active,
 .arrow-next:hover,
 .arrow-next:focus {
-  color: var(--color-border);
+  color: var(--text-light-1);
 }
 .arrow-prev {
   left: 0;
