@@ -6,7 +6,11 @@
         <div class="dish first-dish">
           <h4 class="dish-title">Pad Thai</h4>
           <div class="dish-container">
-            <img class="dish-img" src="#" alt="dish in a bowl" />
+            <img
+              class="dish-img"
+              src="../../img/pad_thai.jpg"
+              alt="dish in a bowl"
+            />
             <ul>
               <li class="dish-ingredients">Makaron ryżowy</li>
               <li class="dish-ingredients">Kiełki bambusa</li>
@@ -16,9 +20,10 @@
             </ul>
           </div>
           <p class="dish-description first-dish">
-            czyli smażony makaron z WOKa. Znajdziecie wiele rodzajów pad thaia,
-            ale najczęściej o jego smaku decydują: sos rybny, sos ostrygowy, sos
-            tamaryndowy, sos sriracha oraz cukier palmowy.
+            czyli najpopularniejszy makaron stir fry z WOKa. Znajdziecie wiele
+            rodzajów pad thaia, ale najczęściej o jego smaku decydują: sos
+            rybny, sos ostrygowy, sos tamaryndowy, sos sriracha oraz cukier
+            palmowy.
           </p>
         </div>
       </li>
@@ -33,7 +38,12 @@
               <li class="dish-ingredients">Ryż</li>
               <li class="dish-ingredients">Liście Limonki</li>
             </ul>
-            <img class="dish-img" src="#" alt="dish in a bowl" />
+            <img
+              class="dish-img"
+              src="../../img/curry.jpg"
+              alt="dish in a
+            bowl"
+            />
           </div>
           <p class="dish-description second-dish">
             to kombinacja pasty curry oraz mleczka kokosowego, która świetnie
@@ -83,9 +93,10 @@ h4.dish-title {
   font-style: italic;
 }
 .dish-img {
-  width: 30vw;
+  width: 150px;
   height: auto;
-  border-radius: 5px;
+  border-radius: 50%;
+  margin-top: 1vh;
 }
 .dish {
   padding-bottom: 5vh;
@@ -119,6 +130,9 @@ h4.dish-title {
   .menu-lettering {
     font-size: 6rem;
     margin: 0 0 0 3vh;
+  }
+  .dish-img {
+    width: 250px;
   }
   h4.dish-title {
     border-bottom: 2px solid var(--color-text);

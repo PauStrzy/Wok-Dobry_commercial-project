@@ -7,15 +7,17 @@
     :loop="true"
   >
     <swiper-slide
-      ><img src="../../img/chickenht.jpg" alt="Chicken satay in a bowl"
+      ><img src="../../img/IMG_0428.jpg" alt="Shrimps and brocoli in poke bowl"
+    /></swiper-slide>
+
+    <swiper-slide
+      ><img src="../../img/IMG_0290.jpg" alt="Shirmps in green rice tempura"
     /></swiper-slide>
     <swiper-slide
-      ><img src="../../img/shrimpscurryht.jpg" alt="Prawn curry in a bowl"
+      ><img src="../../img/wok_on_flames.jpg" alt="Wok on flames"
     /></swiper-slide>
     <swiper-slide
-      ><img
-        src="../../img/shrimpsht.jpg"
-        alt="Tempura breaded shrimps in a bowl"
+      ><img src="../../img/IMG_0385.jpg" alt="Tonkatsu dish"
     /></swiper-slide>
   </swiper>
 </template>
