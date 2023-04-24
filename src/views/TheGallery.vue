@@ -13,8 +13,8 @@
               :alt="slides[currentSlide].attr"
             />
             <figcaption>{{ slides[currentSlide].caption }}</figcaption>
-            <div class="arrow-prev" @click="prevImg()"><p>&laquo;</p></div>
-            <div class="arrow-next" @click="nextImg()"><p>&raquo;</p></div>
+            <div class="arrow-prev" @click="prevImg()"><p>stop</p></div>
+            <div class="arrow-next" @click="nextImg()"><p>play</p></div>
           </figure>
         </transition>
       </div>
