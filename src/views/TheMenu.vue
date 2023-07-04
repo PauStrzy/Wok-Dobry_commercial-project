@@ -2,7 +2,7 @@
   <section class="menu">
     <div class="menu">
       <h4 class="menu">
-        <a href="pdf/Menu.pdf" target="_blank" rel="noopener noreferrer">
+        <a href="pdf/Menu.pdf" download>
           Pobierz Menu</a
         >
       </h4>
@@ -19,15 +19,17 @@ h4.menu {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 2rem 0;
   text-transform: uppercase;
 }
 a {
   color: rgba(200, 200, 200, 0.5);
+  border-bottom: 1px solid rgba(200, 200, 200, 0.5);
 }
 a:hover {
   color: rgba(200, 200, 200, 1);
+
 }
 
 @media (min-width: 760px) {
