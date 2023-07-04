@@ -27,12 +27,12 @@
         <h3 class="contact-details-title title">Dane kontaktowe</h3>
         <ul class="contact-details-list">
           <li>
-            <a href="tel:+48792612888"
+            <a href="tel:663252923"
               ><i class="fa-regular fa-comment icon"></i> 663 252 923</a
             >
           </li>
           <li>
-            <a href="mailto:strzyyy@gmail.com"
+            <a href="mailto:wokdobry@gmail.com"
               ><i class="fa-solid fa-envelope icon"></i> wokdobry@gmail.com</a
             >
           </li>
