@@ -1,11 +1,11 @@
 <template>
   <section class="menu">
     <div class="menu">
-      <h2 class="menu">
-        Pobierz<a href="../pdf/Menu_Wokdobry.pdf" target="_blank"
-          ><span>Menu</span></a
+      <h4 class="menu">
+        <a href="pdf/Menu.pdf" target="_blank" rel="noopener noreferrer">
+          Pobierz Menu</a
         >
-      </h2>
+      </h4>
     </div>
   </section>
 </template>
@@ -14,7 +14,7 @@
 div.menu {
   margin: 0 auto;
 }
-h2.menu {
+h4.menu {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,19 +23,17 @@ h2.menu {
   padding: 2rem 0;
   text-transform: uppercase;
 }
-
-h2.menu span {
-  font-size: 2rem;
-  text-decoration: underline;
+a {
+  color: rgba(200, 200, 200, 0.5);
 }
+a:hover {
+  color: rgba(200, 200, 200, 1);
+}
+
 @media (min-width: 760px) {
-  h2.menu {
+  h4.menu {
     flex-direction: row;
-    font-size: 3rem;
-  }
-  h2.menu span {
-    padding: 0 1rem;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 </style>

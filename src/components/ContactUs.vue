@@ -28,7 +28,7 @@
         <ul class="contact-details-list">
           <li>
             <a href="tel:+48792612888"
-              ><i class="fa-regular fa-comment icon"></i> 665 956 206</a
+              ><i class="fa-regular fa-comment icon"></i> 663 252 923</a
             >
           </li>
           <li>
@@ -48,9 +48,8 @@
       <div class="hours">
         <h3 class="hours-title title">Godziny otwarcia:</h3>
         <ul class="hours-list">
-          <li>pon. - czw. 12:00 - 21:00</li>
-          <li>pt. - sb. 12:00 - 22:00</li>
-          <li>nd. 12:00 - 20:00</li>
+          <li>pon. - pt. 12:00 - 20:00</li>
+          <li>nd. - sb. 13:00 - 20:00</li>
         </ul>
       </div>
       <div class="social">
