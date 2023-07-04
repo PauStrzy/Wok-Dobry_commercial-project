@@ -4,7 +4,7 @@
       <h3 class="map-title title">Tu jesteśmy!</h3>
       <div class="map-object">
         <GoogleMap
-          api-key="AIzaSyCOZoC1vUQb2E0L5EynB4TPIY7p1KUu2Qo"
+          api-key="AIzaSyCoUQk6TqN3Y7ZCif0VT6He0rHcf6Gr1Dk"
           style="width: 100%; height: 100%"
           :center="center"
           :zoom="15"
@@ -110,7 +110,7 @@ export default defineComponent({
 .map-object {
   margin: 0rem auto 1rem;
   width: 95%;
-  height: 50vh;
+  height: 80vh;
 }
 .information-box {
   display: flex;

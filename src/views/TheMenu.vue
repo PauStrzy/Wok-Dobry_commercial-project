@@ -2,12 +2,13 @@
   <section class="menu">
     <div class="menu">
       <h2 class="menu">
-        Pobierz<a href="#"><span>Menu</span></a>
+        Pobierz<a href="../pdf/Menu_Wokdobry.pdf" target="_blank"
+          ><span>Menu</span></a
+        >
       </h2>
     </div>
   </section>
 </template>
-
 
 <style scoped>
 div.menu {
