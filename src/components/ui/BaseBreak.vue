@@ -13,7 +13,6 @@
   overflow: hidden;
 }
 .break img {
-display:none;
   object-fit: cover;
   width: 33%;
   height: 33%;
