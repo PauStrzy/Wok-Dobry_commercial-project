@@ -46,7 +46,7 @@ export default {
     <section id="home">
       <div class="wrapper">
         <img
-          src="../../img/leaves6.png"
+          src="../../img/leaves6.jpg"
           alt="leafs background"
           class="bg-img"
         />
