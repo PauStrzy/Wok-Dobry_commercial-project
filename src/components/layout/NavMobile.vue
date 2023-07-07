@@ -39,6 +39,7 @@ export default {
 <style scoped>
 .nav-mobile {
   display: none;
+
 }
 @media (max-width: 992px) {
   .nav-mobile {

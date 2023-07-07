@@ -115,6 +115,7 @@ export default {
   },
   methods: {
     nextImg() {
+    this.play = false;
       if (this.currentSlide < this.slides.length - 1) {
         this.currentSlide++;
       } else {
@@ -122,6 +123,7 @@ export default {
       }
     },
     prevImg() {
+    this.play = false;
       if (this.currentSlide > 0) {
         this.currentSlide--;
       } else {

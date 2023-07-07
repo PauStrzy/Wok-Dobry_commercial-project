@@ -9,7 +9,7 @@
   --pink-pale: #e3929298;
   --divider-dark-2: #de483a;
   --blue: #1849cf;
-  --white-pale: rgba(255, 187, 187, 0.719);
+  --white-pale: #fff2df;
 
   --divider-light-1: rgb(87, 4, 4);
   --divider-light-2: rgb(39, 1, 1);
@@ -30,7 +30,7 @@
   --divider-dark-1: #9b0000;
   --divider-dark-2: #355c7d;
   --divider-dark-3: rgb(144, 55, 73);
-  --white-pale: rgb(209, 168, 168);
+  --white-pale: #fff2df;
   --text-dark-2: #012443;
   --text-dark-1: rgb(192, 108, 132);
 }

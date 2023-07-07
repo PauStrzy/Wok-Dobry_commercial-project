@@ -18,6 +18,7 @@ import { RouterLink } from "vue-router";
 <style scoped>
 .nav-desktop {
   display: none;
+  min-height: 50px;
 }
 
 @media (min-width: 992px) {
