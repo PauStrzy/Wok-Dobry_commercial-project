@@ -5,6 +5,9 @@ import TheHeader from "./components/layout/TheHeader.vue";
 import TheFooter from "./components/layout/TheFooter.vue";
 import TopButton from "./components/ui/TopButton.vue";
 
+
+
+
 onBeforeMount(() => {
   window.addEventListener("scroll", onScroll);
 });
@@ -16,6 +19,7 @@ function onScroll() {
 </script>
 
 <template>
+ 
   <TheHeader />
 
   <router-view v-slot="slotProps">
@@ -25,6 +29,7 @@ function onScroll() {
   </router-view>
   <TopButton :showTopButton="showTopButton" />
   <TheFooter />
+
 </template>
 
 <style>

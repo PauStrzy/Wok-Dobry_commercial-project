@@ -14,6 +14,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/vue-fontawesome": "^3.0.3",
+    "@imageengine/vue": "^0.1.3",
     "bootstrap": "^5.2.3",
     "pinia": "^2.0.28",
     "swiper": "^9.0.4",
