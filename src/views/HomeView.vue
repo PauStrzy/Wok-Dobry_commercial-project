@@ -52,7 +52,7 @@ export default {
         />
         <div class="container-home">
           <div class="logo">
-            <img src="../../img/logo_1.png" alt="logo Wok Dobry" />
+            <img src="../../img/logo_1.jpg" alt="logo Wok Dobry" />
           </div>
 
           <div class="gallery">
